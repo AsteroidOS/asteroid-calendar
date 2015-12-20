@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Calendar
+Categories=Applications;
+Exec=env QT_QUICK_CONTROLS_STYLE=Asteroid /usr/bin/asteroid-calendar
+Icon=calendar
+X-Desktop-File-Install-Version=0.20
