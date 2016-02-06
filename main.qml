@@ -19,9 +19,4 @@ import QtQuick 2.4
 import QtQuick.Controls 1.3
 import org.asteroid.controls 1.0
 
-Application {
-    id: app
-    title: "Calendar"
-
-    Calendar { anchors.fill: parent }
-}
+Calendar { anchors.fill: parent }

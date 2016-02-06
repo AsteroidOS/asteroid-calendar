@@ -1,5 +1,7 @@
 TEMPLATE = app
 QT += widgets qml quick
+CONFIG += link_pkgconfig
+PKGCONFIG += qdeclarative5-boostable
 
 SOURCES +=     main.cpp
 RESOURCES +=   resources.qrc
