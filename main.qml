@@ -19,4 +19,11 @@ import QtQuick 2.4
 import QtQuick.Controls 1.3
 import org.asteroid.controls 1.0
 
-Calendar { anchors.fill: parent }
+Item {
+    anchors.fill: parent
+    Calendar {
+        anchors.centerIn: parent
+        width: !DeviceInfo.hadRoundScreen ? parent.width/Math.sqrt(2) : parent.width
+        height: !DeviceInfo.hasRoundScreen ? parent.height/Math.sqrt(2) : parent.height
+    }
+}
