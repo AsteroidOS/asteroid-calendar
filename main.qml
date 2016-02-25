@@ -19,8 +19,7 @@ import QtQuick 2.4
 import QtQuick.Controls 1.3
 import org.asteroid.controls 1.0
 
-Item {
-    anchors.fill: parent
+Application {
     Calendar {
         anchors.centerIn: parent
         width: DeviceInfo.hasRoundScreen ? parent.width/Math.sqrt(2) : parent.width
