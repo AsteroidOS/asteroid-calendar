@@ -23,7 +23,7 @@ Item {
     anchors.fill: parent
     Calendar {
         anchors.centerIn: parent
-        width: !DeviceInfo.hadRoundScreen ? parent.width/Math.sqrt(2) : parent.width
-        height: !DeviceInfo.hasRoundScreen ? parent.height/Math.sqrt(2) : parent.height
+        width: DeviceInfo.hasRoundScreen ? parent.width/Math.sqrt(2) : parent.width
+        height: DeviceInfo.hasRoundScreen ? parent.height/Math.sqrt(2) : parent.height
     }
 }
