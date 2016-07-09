@@ -59,17 +59,45 @@ Application {
                     text: styleData.date.getDate()
                     anchors.centerIn: parent
                     color: styleData.visibleMonth && styleData.valid ? "#FFF" : "#555"
-                    font.pixelSize: cal.height/13
+                    font.pixelSize: control.height/13
                 }
             }
             navigationBar: Item {
-                height: cal.height/8
+                height: control.height/8
+                Text {
+                     width: parent.height
+                     height: width
+                     anchors.verticalCenter: parent.verticalCenter
+                     anchors.left: parent.left
+                     verticalAlignment: Text.AlignVCenter
+                     horizontalAlignment: Text.AlignHCenter
+                     text: "<"
+                     color: "white"
+                     MouseArea {
+                         anchors.fill: parent
+                         onClicked: control.showPreviousMonth()
+                     }
+                }
                 Text {
                     text: styleData.title
                     color: "#FFF"
                     horizontalAlignment: Text.AlignHCenter
                     anchors.fill: parent
-                    font.pixelSize: cal.height/11
+                    font.pixelSize: control.height/11
+                }
+                Text {
+                     width: parent.height
+                     height: width
+                     anchors.verticalCenter: parent.verticalCenter
+                     anchors.right: parent.right
+                     verticalAlignment: Text.AlignVCenter
+                     horizontalAlignment: Text.AlignHCenter
+                     text: ">"
+                     color: "white"
+                     MouseArea {
+                         anchors.fill: parent
+                         onClicked: control.showNextMonth()
+                     }
                 }
                 Rectangle {
                     height: 1
