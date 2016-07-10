@@ -18,7 +18,6 @@
 import QtQuick 2.4
 import QtQuick.Controls 1.3
 import QtQuick.Controls.Styles 1.4
-import QtGraphicalEffects 1.0
 import org.asteroid.controls 1.0
 
 Application {
@@ -30,9 +29,7 @@ Application {
         frameVisible: false
 
         style: CalendarStyle {
-            background: LinearGradient {
-                start: Qt.point(0, 0)
-                end: Qt.point(0, parent.height)
+            background: Rectangle {
                 gradient: Gradient {
                     GradientStop { position: 0.0; color: "#79cade" }
                     GradientStop { position: 1.0; color: "#69bfd1" }
