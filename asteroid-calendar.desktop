@@ -1,6 +1,7 @@
 [Desktop Entry]
 Type=Application
 Name=Calendar
+Name[es_ES]=Calendario
 Name[nl_NL]=Kalender
 Categories=Applications;
 Exec=invoker --type=qtcomponents-qt5 /usr/bin/asteroid-calendar
