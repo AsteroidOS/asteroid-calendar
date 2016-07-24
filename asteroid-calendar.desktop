@@ -1,6 +1,7 @@
 [Desktop Entry]
 Type=Application
 Name=Calendar
+Name[de_DE]=Kalender
 Name[es_ES]=Calendario
 Name[nl_NL]=Kalender
 Categories=Applications;
