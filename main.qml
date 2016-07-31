@@ -31,8 +31,8 @@ Application {
         style: CalendarStyle {
             background: Rectangle {
                 gradient: Gradient {
-                    GradientStop { position: 0.0; color: "#79cade" }
-                    GradientStop { position: 1.0; color: "#69bfd1" }
+                    GradientStop { position: 0.0; color: "#69c0ba" }
+                    GradientStop { position: 1.0; color: "#2f4d78" }
                 }
             }
 
@@ -42,23 +42,63 @@ Application {
 
             dayDelegate: Item {
                 Rectangle {
-                    anchors.centerIn: parent
+                    id: selectedBackground
+                    anchors.centerIn: parent;
                     width: Math.min(parent.width, parent.height)
                     height: Math.min(parent.width, parent.height)
-                    radius: width/2
-                    color: "transparent"
-                    border.color: "white"
-                    border.width: 1
-                    visible: styleData.selected
+                    radius: width/2; color: "#69c0ba"; opacity: 0
                 }
 
                 Text {
+                    id: dayText
                     text: styleData.date.getDate()
                     anchors.centerIn: parent
-                    color: styleData.visibleMonth && styleData.valid ? "#FFF" : "#555"
+                    color: styleData.visibleMonth && styleData.valid ? "#FFF" : "#BBB"
                     font.pixelSize: control.height/13
                 }
+
+                states: [
+                   State {
+                       name: "pressed"; when: styleData.selected == true
+                       PropertyChanges { target: selectedBackground; opacity: .4 }
+                       PropertyChanges { target: selectedBackground; scale: 1.3 }
+                       PropertyChanges { target: dayText; scale: 1.3 }
+                       PropertyChanges { target: dayText; z: 1 }
+                   }
+                ]
+
+                transitions: [
+                    Transition {
+                        from: ""
+                        to: "pressed"
+                        NumberAnimation {
+                            properties: "z,scale";
+                            easing.type: Easing.OutExpo;
+                            duration: 50
+                        }
+                        NumberAnimation {
+                           properties: "opacity";
+                           easing.type: Easing.OutExpo;
+                           duration: 100
+                        }
+                    },
+                    Transition {
+                        from: "pressed"
+                        to: ""
+                        NumberAnimation {
+                           properties: "z,scale";
+                           easing.type: Easing.OutExpo;
+                           duration: 200
+                        }
+                        NumberAnimation {
+                           properties: "opacity";
+                           easing.type: Easing.OutExpo;
+                           duration: 300
+                        }
+                    }
+                ]
             }
+
             navigationBar: Item {
                 height: control.height/8
                 Text {
@@ -77,7 +117,7 @@ Application {
                 }
                 Text {
                     text: styleData.title
-                    color: "#FFF"
+                    color: "white"
                     horizontalAlignment: Text.AlignHCenter
                     anchors.fill: parent
                     font.pixelSize: control.height/11
@@ -98,7 +138,7 @@ Application {
                 }
                 Rectangle {
                     height: 1
-                    color: "#b8d6f3"
+                    color: "white"
                     anchors.bottom: parent.bottom
                     anchors.left: parent.left
                     anchors.right: parent.right
