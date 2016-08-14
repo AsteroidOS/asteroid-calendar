@@ -3,8 +3,9 @@ Type=Application
 Name=Calendar
 Name[de_DE]=Kalender
 Name[es_ES]=Calendario
-Name[nl_NL]=Kalender
 Name[fr_FR]=Calendrier
+Name[nl_NL]=Kalender
+Name[pl_PL]=Kalendarz
 Categories=Applications;
 Exec=invoker --type=qtcomponents-qt5 /usr/bin/asteroid-calendar
 Icon=calendar
