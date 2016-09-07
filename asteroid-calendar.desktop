@@ -8,5 +8,5 @@ Name[nl_NL]=Kalender
 Name[pl_PL]=Kalendarz
 Categories=Applications;
 Exec=invoker --type=qtcomponents-qt5 /usr/bin/asteroid-calendar
-Icon=calendar
+Icon=ios-calendar-outline
 X-Desktop-File-Install-Version=0.20
