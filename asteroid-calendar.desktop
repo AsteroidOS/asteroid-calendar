@@ -6,6 +6,7 @@ Name[es_ES]=Calendario
 Name[fr_FR]=Calendrier
 Name[nl_NL]=Kalender
 Name[pl_PL]=Kalendarz
+Name[ru_RU]=календарь
 Categories=Applications;
 Exec=invoker --type=qtcomponents-qt5 /usr/bin/asteroid-calendar
 Icon=ios-calendar-outline
