@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 - Florent Revest <revestflo@gmail.com>
+ * Copyright (C) 2016 - Florent Revest <revestflo@gmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,134 +16,230 @@
  */
 
 import QtQuick 2.4
-import QtQuick.Controls 1.3
-import QtQuick.Controls.Styles 1.4
+import org.nemomobile.calendar 1.0
 import org.asteroid.controls 1.0
 
 Application {
-    Calendar {
-        id: cal
-        anchors.centerIn: parent
-        width: DeviceInfo.hasRoundScreen ? parent.width/Math.sqrt(2) : parent.width
-        height: DeviceInfo.hasRoundScreen ? parent.height/Math.sqrt(2) : parent.height
-        frameVisible: false
+    property color overlayColor: "#ee7433"
 
-        style: CalendarStyle {
-            background: Rectangle {
-                gradient: Gradient {
-                    GradientStop { position: 0.0; color: "#69c0ba" }
-                    GradientStop { position: 1.0; color: "#2f4d78" }
+    property date currentDate: new Date()
+
+    property int year: currentDate.getFullYear()
+    property int month: currentDate.getMonth()+1
+    property int day: currentDate.getDate()
+
+    function zeroPadding(i) {
+        if (i > 9) return i
+        else       return "0" + i
+    }
+
+    Component  { id: eventDialogLayer;   EventDialog   { } }
+    Component  { id: monthSelectorLayer; MonthSelector { } }
+    LayerStack {
+        id: layerStack
+        firstPage: firstPageComponent
+    }
+
+    AgendaModel {
+        id: agendaModel
+        startDate: new Date(year, month, day)
+        endDate: startDate
+    }
+
+    Component {
+        id: firstPageComponent
+
+        Item {
+            property int daySelectorHeight: height*5/7
+            property int dayInfoHeight: height/7
+            onDaySelectorHeightChanged: agenda.contentY = -daySelectorHeight-dayInfoHeight
+
+            ListView {
+                id: agenda
+                anchors.fill: parent
+                model: agendaModel
+                NumberAnimation on contentY {
+                    id: yAnimation
+                    duration: 200
                 }
-            }
-
-            gridVisible: false
-
-            dayOfWeekDelegate: Item {}
-
-            dayDelegate: Item {
-                Rectangle {
-                    id: selectedBackground
-                    anchors.centerIn: parent;
-                    width: Math.min(parent.width, parent.height)
-                    height: Math.min(parent.width, parent.height)
-                    radius: width/2; color: "#69c0ba"; opacity: 0
-                }
-
-                Text {
-                    id: dayText
-                    text: styleData.date.getDate()
-                    anchors.centerIn: parent
-                    color: styleData.visibleMonth && styleData.valid ? "#FFF" : "#BBB"
-                    font.pixelSize: control.height/13
-                }
-
-                states: [
-                   State {
-                       name: "pressed"; when: styleData.selected == true
-                       PropertyChanges { target: selectedBackground; opacity: .4 }
-                       PropertyChanges { target: selectedBackground; scale: 1.3 }
-                       PropertyChanges { target: dayText; scale: 1.3 }
-                       PropertyChanges { target: dayText; z: 1 }
-                   }
-                ]
-
-                transitions: [
-                    Transition {
-                        from: ""
-                        to: "pressed"
-                        NumberAnimation {
-                            properties: "z,scale";
-                            easing.type: Easing.OutExpo;
-                            duration: 50
-                        }
-                        NumberAnimation {
-                           properties: "opacity";
-                           easing.type: Easing.OutExpo;
-                           duration: 100
-                        }
-                    },
-                    Transition {
-                        from: "pressed"
-                        to: ""
-                        NumberAnimation {
-                           properties: "z,scale";
-                           easing.type: Easing.OutExpo;
-                           duration: 200
-                        }
-                        NumberAnimation {
-                           properties: "opacity";
-                           easing.type: Easing.OutExpo;
-                           duration: 300
+                onMovementEnded: {
+                    if(contentY < 0) {
+                        if(contentY > -daySelectorHeight/2) {
+                            yAnimation.to = -dayInfoHeight
+                            yAnimation.start()
+                        } else {
+                            yAnimation.to = -daySelectorHeight-dayInfoHeight
+                            yAnimation.start()
                         }
                     }
-                ]
+                }
+                delegate: Item {
+                    height: dayInfoHeight
+                    width: parent.width
+
+                    Text {
+                        id: hour
+                        text: Qt.formatTime(model.occurrence.startTime)
+                        color: "white"
+                        horizontalAlignment: Text.AlignRight
+                        anchors.verticalCenter: parent.verticalCenter
+                        anchors.left: parent.left
+                        width: parent.width/3
+                        font.pixelSize: parent.height/2.5
+                    }
+                    Text {
+                        id: title
+                        color: "white"
+                        anchors.left: hour.right
+                        anchors.right: parent.right
+                        anchors.leftMargin: 20
+                        text: model.event.displayLabel
+                        anchors.verticalCenter: parent.verticalCenter
+                        font.pixelSize: parent.height/2.5
+                    }
+                }
+                header: Item { height: daySelectorHeight + dayInfoHeight }
+                footer: Item { height: Math.max(2*dayInfoHeight, agenda.height-(agenda.count+1)*dayInfoHeight) }
             }
 
-            navigationBar: Item {
-                height: control.height/8
-                Text {
-                     width: parent.height
-                     height: width
-                     anchors.verticalCenter: parent.verticalCenter
-                     anchors.left: parent.left
-                     verticalAlignment: Text.AlignVCenter
-                     horizontalAlignment: Text.AlignHCenter
-                     text: "<"
-                     color: "white"
-                     MouseArea {
-                         anchors.fill: parent
-                         onClicked: control.showPreviousMonth()
-                     }
+            IconButton {
+                id: add
+                width: dayInfoHeight
+                height: dayInfoHeight
+                anchors.bottom: parent.bottom
+                anchors.bottomMargin: dayInfoHeight/2
+                anchors.horizontalCenter: parent.horizontalCenter
+                enabled: opacity == 1.0
+                opacity: agenda.contentY >= -dayInfoHeight ? 1.0 : 0.0
+                Behavior on opacity { NumberAnimation { duration: 200 } }
+                iconColor: "white"
+                pressedIconColor: "lightgrey"
+                iconName:  "ios-add-circle-outline"
+                onClicked: layerStack.push(eventDialogLayer)
+            }
+
+            Item {
+                id: daySelector
+                anchors.top: parent.top
+                anchors.right: parent.right
+                anchors.left: parent.left
+                height: {
+                    if(agenda.contentY >= -dayInfoHeight)                  return 0;
+                    if(agenda.contentY < -daySelectorHeight-dayInfoHeight) return daySelectorHeight
+                    else                                                   return -agenda.contentY-dayInfoHeight
                 }
-                Text {
-                    text: styleData.title
-                    color: "white"
-                    horizontalAlignment: Text.AlignHCenter
-                    anchors.fill: parent
-                    font.pixelSize: control.height/11
-                }
-                Text {
-                     width: parent.height
-                     height: width
-                     anchors.verticalCenter: parent.verticalCenter
-                     anchors.right: parent.right
-                     verticalAlignment: Text.AlignVCenter
-                     horizontalAlignment: Text.AlignHCenter
-                     text: ">"
-                     color: "white"
-                     MouseArea {
-                         anchors.fill: parent
-                         onClicked: control.showNextMonth()
-                     }
-                }
+                visible: height > 0
+                enabled: height > 0
+
                 Rectangle {
-                    height: 1
-                    color: "white"
-                    anchors.bottom: parent.bottom
+                    id: monthInfo
+                    color: overlayColor
+                    anchors.topMargin: height
+                    anchors.top: parent.top
                     anchors.left: parent.left
                     anchors.right: parent.right
-                    anchors.leftMargin: 15
-                    anchors.rightMargin: 15
+                    height: parent.height*dayInfoHeight/daySelectorHeight
+
+                    Text {
+                        anchors.fill: parent
+                        color: "white"
+                        text: Qt.locale().monthName(month-1, Locale.LongFormat)
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                        font.pixelSize: height/2
+                        font.capitalization: Font.Capitalize
+                    }
+                }
+
+                MouseArea {
+                    anchors.top: parent.top
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    height: 2*monthInfo.height
+                    onClicked: layerStack.push(monthSelectorLayer)
+                }
+
+                ListView {
+                    id: dayLV
+                    anchors.top: monthInfo.bottom
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    anchors.bottom: parent.bottom
+                    model: new Date(year, month, 0).getDate();
+                    orientation: ListView.Horizontal
+
+                    delegate: Item {
+                        width: dayLV.width/2.5
+                        height: dayLV.height
+
+                        Image {
+                            anchors.fill: parent
+                            fillMode: Image.PreserveAspectFit
+                            opacity: parent.ListView.isCurrentItem ? 1.0 : 0.0
+                            Behavior on opacity { NumberAnimation { duration: 200 } }
+                            source: "qrc:/day_background.png"
+                        }
+
+                        Text {
+                            text: Qt.locale().dayName(new Date(year, month-1, index+1).getDay(), Locale.ShortFormat) +
+                                  "\n" + (index+1) + "\n"
+                            color: "white"
+                            anchors.centerIn: parent
+                            horizontalAlignment: Text.AlignHCenter
+                            verticalAlignment: Text.AlignVCenter
+                            font.pixelSize: parent.height/10
+                            font.capitalization: Font.Capitalize
+                            scale: parent.ListView.isCurrentItem ? 1.3 : 1
+                            Behavior on scale { NumberAnimation { duration: 200 } }
+                            anchors.verticalCenterOffset: parent.ListView.isCurrentItem ? 0 : -height/4
+                            Behavior on anchors.verticalCenterOffset { NumberAnimation { duration: 200 } }
+                        }
+                    }
+
+                    preferredHighlightBegin: width/2 - dayLV.width/5
+                    preferredHighlightEnd: width/2 + dayLV.width/5
+                    highlightRangeMode: ListView.StrictlyEnforceRange
+                    snapMode: ListView.SnapToItem
+
+                    currentIndex: day-1
+                    onCurrentIndexChanged: day = currentIndex + 1
+                    spacing: 1/count
+                }
+            }
+
+            Rectangle {
+                id: dayInfo
+                anchors.left: parent.left
+                anchors.right: parent.right
+                anchors.top: daySelector.bottom
+                height: dayInfoHeight
+                color: overlayColor
+                Text {
+                    anchors.fill: parent
+                    color: "white"
+                    text: agenda.count + " Events on " + Qt.locale().dayName(new Date(year, month-1, day).getDay(), Locale.ShortFormat) + " " + zeroPadding(day) + "/" + month + "/" + zeroPadding(year-2000)
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                    font.pixelSize: height/2.5
+                }
+
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: {
+                        yAnimation.to = -dayInfoHeight
+                        yAnimation.start()
+                    }
+                }
+            }
+
+            Rectangle {
+                anchors.top: dayInfo.bottom
+                anchors.left: parent.left
+                anchors.right: parent.right
+                height: dayInfo.height/5
+                gradient: Gradient {
+                    GradientStop { position: 0.0; color: "#66000000" }
+                    GradientStop { position: 1.0; color: "transparent" }
                 }
             }
         }

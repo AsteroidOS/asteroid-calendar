@@ -1,5 +1,8 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
+        <file>EventDialog.qml</file>
+        <file>MonthSelector.qml</file>
+        <file>day_background.png</file>
     </qresource>
 </RCC>

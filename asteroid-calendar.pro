@@ -5,7 +5,7 @@ PKGCONFIG += qdeclarative5-boostable
 
 SOURCES +=     main.cpp
 RESOURCES +=   resources.qrc
-OTHER_FILES += main.qml
+OTHER_FILES += main.qml EventDialog.qml MonthSelector.qml
 
 TARGET = asteroid-calendar
 target.path = /usr/bin/
