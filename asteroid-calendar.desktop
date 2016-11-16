@@ -10,4 +10,5 @@ Name[ru_RU]=календарь
 Categories=Applications;
 Exec=invoker --type=qtcomponents-qt5 /usr/bin/asteroid-calendar
 Icon=ios-calendar-outline
-X-Desktop-File-Install-Version=0.20
+X-Asteroid-Center-Color=#00CCB2
+X-Asteroid-Outer-Color=#00322C

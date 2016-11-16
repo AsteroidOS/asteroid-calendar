@@ -20,7 +20,9 @@ import org.nemomobile.calendar 1.0
 import org.asteroid.controls 1.0
 
 Application {
-    property color overlayColor: "#ee7433"
+    centerColor: "#00ccb2"
+    outerColor: "#00322c"
+    property color overlayColor: "#209283"
 
     property date currentDate: new Date()
 
