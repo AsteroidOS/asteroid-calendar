@@ -171,7 +171,7 @@ Application {
                     orientation: ListView.Horizontal
 
                     delegate: Item {
-                        width: dayLV.width/2.5
+                        width: dayLV.width/2.3
                         height: dayLV.height
 
                         Image {
