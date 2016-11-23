@@ -76,8 +76,9 @@ Application {
                     }
                 }
                 delegate: Item {
-                    height: dayInfoHeight
+                    height: agenda.contentY >= -dayInfoHeight ? dayInfoHeight*1.7 : dayInfoHeight
                     width: parent.width
+                    Behavior on height { NumberAnimation { duration: 100 } }
 
                     Text {
                         id: hour
