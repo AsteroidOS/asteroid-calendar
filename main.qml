@@ -137,11 +137,10 @@ Application {
                 Rectangle {
                     id: monthInfo
                     color: overlayColor
-                    anchors.topMargin: height
                     anchors.top: parent.top
                     anchors.left: parent.left
                     anchors.right: parent.right
-                    height: parent.height*dayInfoHeight/daySelectorHeight
+                    height: 2*parent.height*dayInfoHeight/daySelectorHeight
 
                     Text {
                         anchors.fill: parent
@@ -149,7 +148,7 @@ Application {
                         text: Qt.locale().monthName(month-1, Locale.LongFormat)
                         horizontalAlignment: Text.AlignHCenter
                         verticalAlignment: Text.AlignVCenter
-                        font.pixelSize: height/2
+                        font.pixelSize: height/4
                         font.capitalization: Font.Capitalize
                     }
                 }
