@@ -1,12 +1,12 @@
 [Desktop Entry]
 Type=Application
-Name=Calendar
-Name[de_DE]=Kalender
-Name[es_ES]=Calendario
-Name[fr_FR]=Calendrier
-Name[nl_NL]=Kalender
-Name[pl_PL]=Kalendarz
-Name[ru_RU]=календарь
+Name=Agenda
+Name[de_DE]=Agenda
+Name[es_ES]=Agenda
+Name[fr_FR]=Agenda
+Name[nl_NL]=Agenda
+Name[pl_PL]=Agenda
+Name[ru_RU]=повестка дня
 Categories=Applications;
 Exec=invoker --type=qtcomponents-qt5 /usr/bin/asteroid-calendar
 Icon=ios-calendar-outline
