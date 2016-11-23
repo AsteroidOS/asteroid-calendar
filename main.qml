@@ -193,8 +193,15 @@ Application {
                             font.capitalization: Font.Capitalize
                             scale: parent.ListView.isCurrentItem ? 1.3 : 1
                             Behavior on scale { NumberAnimation { duration: 200 } }
-                            anchors.verticalCenterOffset: parent.ListView.isCurrentItem ? 0 : -height/4
-                            Behavior on anchors.verticalCenterOffset { NumberAnimation { duration: 200 } }
+                        }
+
+                        MouseArea {
+                            enabled: parent.ListView.isCurrentItem
+                            anchors.fill: parent
+                            onClicked: {
+                                yAnimation.to = -dayInfoHeight
+                                yAnimation.start()
+                            }
                         }
                     }
 
