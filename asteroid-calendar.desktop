@@ -8,7 +8,7 @@ Name[nl_NL]=Agenda
 Name[pl_PL]=Agenda
 Name[ru_RU]=повестка дня
 Categories=Applications;
-Exec=invoker --type=qtcomponents-qt5 /usr/bin/asteroid-calendar
+Exec=invoker --single-instance --type=qtcomponents-qt5 /usr/bin/asteroid-calendar
 Icon=ios-calendar-outline
 X-Asteroid-Center-Color=#00CCB2
 X-Asteroid-Outer-Color=#00322C
