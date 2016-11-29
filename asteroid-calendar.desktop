@@ -10,5 +10,5 @@ Name[ru_RU]=повестка дня
 Categories=Applications;
 Exec=invoker --single-instance --type=qtcomponents-qt5 /usr/bin/asteroid-calendar
 Icon=ios-calendar-outline
-X-Asteroid-Center-Color=#00CCB2
-X-Asteroid-Outer-Color=#00322C
+X-Asteroid-Center-Color=#EA9C14
+X-Asteroid-Outer-Color=#5E3F08

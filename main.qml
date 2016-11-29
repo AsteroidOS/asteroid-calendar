@@ -20,9 +20,9 @@ import org.nemomobile.calendar 1.0
 import org.asteroid.controls 1.0
 
 Application {
-    centerColor: "#00ccb2"
-    outerColor: "#00322c"
-    property color overlayColor: "#209283"
+    centerColor: "#EA9C14"
+    outerColor: "#5E3F08"
+    property color overlayColor: "#9b7232"
 
     property date currentDate: new Date()
 
@@ -184,7 +184,7 @@ Application {
 
                         Text {
                             text: Qt.locale().dayName(new Date(year, month-1, index+1).getDay(), Locale.ShortFormat) +
-                                  "\n" + (index+1) + "\n"
+                                  "\n" + (index+1)
                             color: "white"
                             anchors.centerIn: parent
                             horizontalAlignment: Text.AlignHCenter
