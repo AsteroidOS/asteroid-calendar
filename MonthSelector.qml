@@ -19,8 +19,8 @@ import QtQuick 2.0
 import org.asteroid.controls 1.0
 
 Item {
-   id: root
-   property var pop
+    id: root
+    property var pop
 
     Text {
         id: title
