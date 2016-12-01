@@ -7,6 +7,12 @@ SOURCES +=     main.cpp
 RESOURCES +=   resources.qrc
 OTHER_FILES += main.qml EventDialog.qml MonthSelector.qml
 
+lupdate_only{
+    SOURCES = main.qml \
+              EventDialog.qml \
+              MonthSelector.qml
+}
+
 TARGET = asteroid-calendar
 target.path = /usr/bin/
 
