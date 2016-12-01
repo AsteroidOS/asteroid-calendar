@@ -22,7 +22,7 @@ import org.asteroid.controls 1.0
 Application {
     centerColor: "#EA9C14"
     outerColor: "#5E3F08"
-    property color overlayColor: "#9b7232"
+    property color overlayColor: "#b07414"
 
     property date currentDate: new Date()
 
