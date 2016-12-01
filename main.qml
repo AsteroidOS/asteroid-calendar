@@ -226,7 +226,7 @@ Application {
                 Text {
                     anchors.fill: parent
                     color: "white"
-                    text: agenda.count + qsTr(" Events on ") + Qt.locale().dayName(new Date(year, month-1, day).getDay(), Locale.ShortFormat) + " " + zeroPadding(day) + "/" + month + "/" + zeroPadding(year-2000)
+                    text: qsTr("%1 Events on %2 %3/%4/%5").arg(agenda.count).arg(Qt.locale().dayName(new Date(year, month-1, day).getDay(), Locale.ShortFormat)).arg(zeroPadding(day)).arg(month).arg(zeroPadding(year-2000))
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
                     font.pixelSize: height/2.5
