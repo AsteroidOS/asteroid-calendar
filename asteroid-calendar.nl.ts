@@ -36,8 +36,8 @@
     <name>main</name>
     <message>
         <location filename="main.qml" line="229"/>
-        <source> Events on </source>
-        <translation> Evenementen op </translation>
+        <source>%1 Events on %2 %3/%4/%5</source>
+        <translation>%1 Evenementen op %2 %3/%4/%5</translation>
     </message>
 </context>
 </TS>
