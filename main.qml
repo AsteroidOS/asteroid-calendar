@@ -54,29 +54,37 @@ Application {
         Item {
             property int daySelectorHeight: height*5/7
             property int dayInfoHeight: height/7
-            onDaySelectorHeightChanged: agenda.contentY = -daySelectorHeight-dayInfoHeight
+            onDaySelectorHeightChanged: agenda.contentY = -daySelectorHeight
+
+            function animateToDayView() {
+                yAnimation.to = DeviceInfo.hasRoundScreen ? -dayInfoHeight : 0
+                yAnimation.start()
+            }
+            property bool isDayView: agenda.contentY >= -dayInfoHeight
+
+            function animateToMonthView() {
+                yAnimation.to = -daySelectorHeight
+                yAnimation.start()
+            }
 
             ListView {
                 id: agenda
                 anchors.fill: parent
+                clip: true
+                anchors.topMargin: dayInfoHeight
                 model: agendaModel
                 NumberAnimation on contentY {
                     id: yAnimation
                     duration: 200
                 }
                 onMovementEnded: {
-                    if(contentY < 0) {
-                        if(contentY > -daySelectorHeight/2) {
-                            yAnimation.to = -dayInfoHeight
-                            yAnimation.start()
-                        } else {
-                            yAnimation.to = -daySelectorHeight-dayInfoHeight
-                            yAnimation.start()
-                        }
+                    if(!isDayView) {
+                        if(contentY > -daySelectorHeight/2) animateToDayView()
+                        else animateToMonthView()
                     }
                 }
                 delegate: Item {
-                    height: agenda.contentY >= -dayInfoHeight ? dayInfoHeight*1.7 : dayInfoHeight
+                    height: agenda.contentY > -daySelectorHeight/2 ? dayInfoHeight*1.7 : dayInfoHeight
                     width: parent.width
                     Behavior on height { NumberAnimation { duration: 100 } }
 
@@ -101,8 +109,8 @@ Application {
                         font.pixelSize: parent.height/2.5
                     }
                 }
-                header: Item { height: daySelectorHeight + dayInfoHeight }
-                footer: Item { height: Math.max(2*dayInfoHeight, agenda.height-(agenda.count+1)*dayInfoHeight) }
+                header: Item { height: daySelectorHeight }
+                footer: Item { height: Math.max(2*dayInfoHeight, agenda.height-agenda.count*dayInfoHeight*1.7) - (DeviceInfo.hasRoundScreen ? dayInfoHeight/2 : 0) }
             }
 
             IconButton {
@@ -113,7 +121,7 @@ Application {
                 anchors.bottomMargin: dayInfoHeight/2
                 anchors.horizontalCenter: parent.horizontalCenter
                 enabled: opacity == 1.0
-                opacity: agenda.contentY >= -dayInfoHeight ? 1.0 : 0.0
+                opacity: isDayView ? 1.0 : 0.0
                 Behavior on opacity { NumberAnimation { duration: 200 } }
                 iconColor: "white"
                 pressedIconColor: "lightgrey"
@@ -127,9 +135,10 @@ Application {
                 anchors.right: parent.right
                 anchors.left: parent.left
                 height: {
-                    if(agenda.contentY >= -dayInfoHeight)                  return 0;
-                    if(agenda.contentY < -daySelectorHeight-dayInfoHeight) return daySelectorHeight
-                    else                                                   return -agenda.contentY-dayInfoHeight
+                    if(isDayView)    return 0;
+                    if(agenda.contentY < -daySelectorHeight) return daySelectorHeight
+                    else                                     return -agenda.contentY -
+                        (DeviceInfo.hasRoundScreen ? 0 : (daySelectorHeight+agenda.contentY)/(daySelectorHeight)*dayInfoHeight)
                 }
                 visible: height > 0
                 enabled: height > 0
@@ -151,14 +160,10 @@ Application {
                         font.pixelSize: height/4
                         font.capitalization: Font.Capitalize
                     }
-                }
-
-                MouseArea {
-                    anchors.top: parent.top
-                    anchors.left: parent.left
-                    anchors.right: parent.right
-                    height: 2*monthInfo.height
-                    onClicked: layerStack.push(monthSelectorLayer)
+                    MouseArea {
+                        anchors.fill: parent
+                        onClicked: layerStack.push(monthSelectorLayer)
+                    }
                 }
 
                 ListView {
@@ -191,17 +196,14 @@ Application {
                             verticalAlignment: Text.AlignVCenter
                             font.pixelSize: parent.height/10
                             font.capitalization: Font.Capitalize
-                            scale: parent.ListView.isCurrentItem ? 1.3 : 1
+                            scale: parent.ListView.isCurrentItem ? 1.5 : 1
                             Behavior on scale { NumberAnimation { duration: 200 } }
                         }
 
                         MouseArea {
                             enabled: parent.ListView.isCurrentItem
                             anchors.fill: parent
-                            onClicked: {
-                                yAnimation.to = -dayInfoHeight
-                                yAnimation.start()
-                            }
+                            onClicked: animateToDayView()
                         }
                     }
 
@@ -221,6 +223,12 @@ Application {
                 anchors.left: parent.left
                 anchors.right: parent.right
                 anchors.top: daySelector.bottom
+                anchors.topMargin: {
+                    if(agenda.contentY >= 0)  return dayInfoHeight
+                    if(!isDayView) return 0
+                    else return dayInfoHeight - daySelector.height
+                }
+                Component.onCompleted: if(!DeviceInfo.hasRoundScreen) anchors.topMargin=0
                 height: dayInfoHeight
                 color: overlayColor
                 Text {
@@ -234,14 +242,11 @@ Application {
 
                 MouseArea {
                     anchors.fill: parent
-                    onClicked: {
-                        yAnimation.to = -dayInfoHeight
-                        yAnimation.start()
-                    }
+                    onClicked: animateToDayView()
                 }
             }
-
             Rectangle {
+                id: shadow
                 anchors.top: dayInfo.bottom
                 anchors.left: parent.left
                 anchors.right: parent.right
