@@ -25,6 +25,11 @@ Item {
     property var pop
     property var event
 
+    function zeroPadding(i) {
+        if (i > 9) return i
+        else       return "0" + i
+    }
+
     Text {
         id: title
         color: "white"
@@ -87,7 +92,7 @@ Item {
                 width: minuteLV.width
                 height: 30
                 Text {
-                    text: index
+                    text: zeroPadding(index)
                     anchors.centerIn: parent
                     color: parent.ListView.isCurrentItem ? "white" : "lightgrey"
                     scale: parent.ListView.isCurrentItem ? 1.5 : 1
