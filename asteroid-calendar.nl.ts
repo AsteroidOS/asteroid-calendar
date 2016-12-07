@@ -29,7 +29,7 @@
     <message>
         <location filename="MonthSelector.qml" line="28"/>
         <source>Select a date:</source>
-        <translation>Kies een datum</translation>
+        <translation>Kies een datum:</translation>
     </message>
 </context>
 <context>
