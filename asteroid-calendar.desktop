@@ -6,6 +6,7 @@ Name[es_ES]=Agenda
 Name[fr_FR]=Agenda
 Name[nl_NL]=Agenda
 Name[pl_PL]=Agenda
+Name[sv_SV]=Kalender
 Name[ru_RU]=повестка дня
 Categories=Applications;
 Exec=invoker --single-instance --type=qtcomponents-qt5 /usr/bin/asteroid-calendar
