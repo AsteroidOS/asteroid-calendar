@@ -6,17 +6,17 @@
     <message>
         <location filename="EventDialog.qml" line="31"/>
         <source>New Event</source>
-        <translation type="unfinished"></translation>
+        <translation>Új Esemény</translation>
     </message>
     <message>
         <location filename="EventDialog.qml" line="31"/>
         <source>Edit Event</source>
-        <translation type="unfinished"></translation>
+        <translation>Esemény Szerkesztése</translation>
     </message>
     <message>
         <location filename="EventDialog.qml" line="117"/>
         <source>Alpha version</source>
-        <translation type="unfinished"></translation>
+        <translation>Alfa verzió</translation>
     </message>
     <message>
         <location filename="EventDialog.qml" line="126"/>
@@ -29,7 +29,7 @@
     <message>
         <location filename="MonthSelector.qml" line="28"/>
         <source>Select a date:</source>
-        <translation type="unfinished"></translation>
+        <translation>Válassz dátumot:</translation>
     </message>
 </context>
 <context>
