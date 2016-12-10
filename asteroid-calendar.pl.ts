@@ -6,22 +6,22 @@
     <message>
         <location filename="EventDialog.qml" line="31"/>
         <source>New Event</source>
-        <translation type="unfinished"></translation>
+        <translation>Nowe wydarzenie</translation>
     </message>
     <message>
         <location filename="EventDialog.qml" line="31"/>
         <source>Edit Event</source>
-        <translation type="unfinished"></translation>
+        <translation>Edycja wydarzenia</translation>
     </message>
     <message>
         <location filename="EventDialog.qml" line="117"/>
         <source>Alpha version</source>
-        <translation type="unfinished"></translation>
+        <translation>Wersja alpha</translation>
     </message>
     <message>
         <location filename="EventDialog.qml" line="126"/>
         <source>Some features are not developed yet</source>
-        <translation type="unfinished"></translation>
+        <translation>Niektóre funkcje nie są jeszcze ukończone</translation>
     </message>
 </context>
 <context>
@@ -29,7 +29,7 @@
     <message>
         <location filename="MonthSelector.qml" line="28"/>
         <source>Select a date:</source>
-        <translation type="unfinished"></translation>
+        <translation>Wybierz datę:</translation>
     </message>
 </context>
 <context>
