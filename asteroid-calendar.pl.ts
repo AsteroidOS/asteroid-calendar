@@ -37,7 +37,7 @@
     <message>
         <location filename="main.qml" line="229"/>
         <source>%1 Events on %2 %3/%4/%5</source>
-        <translation type="unfinished"></translation>
+        <translation>Liczba wydarzeń w %2 %3/%4/%5 to %1</translation>
     </message>
 </context>
 </TS>
