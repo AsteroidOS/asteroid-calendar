@@ -6,7 +6,7 @@
     <message>
         <location filename="EventDialog.qml" line="31"/>
         <source>New Event</source>
-        <translation>Termin neu</translation>
+        <translation>Neuer Termin</translation>
     </message>
     <message>
         <location filename="EventDialog.qml" line="31"/>
