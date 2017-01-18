@@ -10,6 +10,7 @@ Name[pl]=Terminarz
 Name[pt_BR]=Agenda
 Name[sv]=Kalender
 Name[ru]=повестка дня
+Name[fa]=تقویم
 Categories=Applications;
 Exec=invoker --single-instance --type=qtcomponents-qt5 /usr/bin/asteroid-calendar
 Icon=ios-calendar-outline
