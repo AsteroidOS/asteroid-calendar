@@ -3,6 +3,7 @@ Type=Application
 Name=Agenda
 Name[de_DE]=Agenda
 Name[es]=Agenda
+Name[fa]=تقویم
 Name[fr]=Agenda
 Name[ko]=일정
 Name[nl_NL]=Agenda
@@ -10,7 +11,7 @@ Name[pl]=Terminarz
 Name[pt_BR]=Agenda
 Name[sv]=Kalender
 Name[ru]=повестка дня
-Name[fa]=تقویم
+Name[uk]=Календар
 Categories=Applications;
 Exec=invoker --single-instance --type=qtcomponents-qt5 /usr/bin/asteroid-calendar
 Icon=ios-calendar-outline
