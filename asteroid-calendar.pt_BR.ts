@@ -21,7 +21,7 @@
     <message>
         <location filename="EventDialog.qml" line="126"/>
         <source>Some features are not developed yet</source>
-        <translation>Algumas funcionalidades ainda não foram desenvolvidas</translation>
+        <translation>Alguns recursos ainda não foram desenvolvidos</translation>
     </message>
 </context>
 <context>
@@ -29,7 +29,7 @@
     <message>
         <location filename="MonthSelector.qml" line="28"/>
         <source>Select a date:</source>
-        <translation>Seleciona uma data:</translation>
+        <translation>Selecione uma data:</translation>
     </message>
 </context>
 <context>
