@@ -39,7 +39,7 @@ TARGET = asteroid-calendar
 target.path = /usr/bin/
 
 desktop.commands = bash $$PWD/i18n/generate-desktop.sh $$PWD asteroid-calendar.desktop
-desktop.files = asteroid-calendar.desktop
+desktop.files = $$OUT_PWD/asteroid-calendar.desktop
 desktop.path = /usr/share/applications
 
 INSTALLS += target desktop
