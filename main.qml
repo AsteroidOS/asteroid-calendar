@@ -115,10 +115,8 @@ Application {
 
             IconButton {
                 id: add
-                width: dayInfoHeight
-                height: dayInfoHeight
                 anchors.bottom: parent.bottom
-                anchors.bottomMargin: dayInfoHeight/2
+                anchors.bottomMargin: app.height/28
                 anchors.horizontalCenter: parent.horizontalCenter
                 enabled: opacity == 1.0
                 opacity: isDayView ? 1.0 : 0.0
