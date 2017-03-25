@@ -21,7 +21,7 @@
     <message>
         <location filename="../EventDialog.qml" line="131"/>
         <source>Some features are not developed yet</source>
-        <translation type="unfinished"></translation>
+        <translation>Egyes funkciók még nem működnek</translation>
     </message>
 </context>
 <context>
@@ -37,7 +37,7 @@
     <message>
         <location filename="asteroid-calendar.desktop.h" line="5"/>
         <source>Agenda</source>
-        <translation type="unfinished"></translation>
+        <translation>Eseménynapló</translation>
     </message>
 </context>
 <context>
@@ -45,7 +45,7 @@
     <message>
         <location filename="../main.qml" line="237"/>
         <source>%1 Events on %2 %3/%4/%5</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Események %2 %3/%4/%5</translation>
     </message>
 </context>
 </TS>
