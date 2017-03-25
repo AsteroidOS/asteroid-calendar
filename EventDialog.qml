@@ -140,8 +140,6 @@ Item {
     }
 
     IconButton {
-        height: parent.height*0.2
-        width: height
         iconName: "ios-close-circle-outline"
         iconColor: "white"
         pressedIconColor: "lightgrey"
@@ -149,6 +147,7 @@ Item {
         anchors.right: parent.horizontalCenter
         anchors.rightMargin: 5
         anchors.bottom: parent.bottom
+        anchors.bottomMargin: app.height/28
         onClicked: {
             // TODO: delete event
             root.pop()
@@ -156,12 +155,11 @@ Item {
     }
 
     IconButton {
-        height: parent.height*0.2
-        width: height
         anchors.left: typeof event !== 'undefined' ? parent.horizontalCenter : undefined
         anchors.leftMargin: 5
         anchors.horizontalCenter: typeof event !== 'undefined' ? undefined : parent.horizontalCenter
         anchors.bottom: parent.bottom
+        anchors.bottomMargin: app.height/28
 
         iconName: typeof event !== 'undefined' ? "ios-checkmark-circle-outline" : "ios-add-circle-outline"
         iconColor: "white"
