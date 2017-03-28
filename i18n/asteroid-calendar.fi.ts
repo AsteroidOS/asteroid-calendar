@@ -6,22 +6,22 @@
     <message>
         <location filename="../EventDialog.qml" line="36"/>
         <source>New Event</source>
-        <translation type="unfinished"></translation>
+        <translation>Uusi Tapahtuma</translation>
     </message>
     <message>
         <location filename="../EventDialog.qml" line="36"/>
         <source>Edit Event</source>
-        <translation type="unfinished"></translation>
+        <translation>Muokkaa Tapahtumaa</translation>
     </message>
     <message>
         <location filename="../EventDialog.qml" line="122"/>
         <source>Alpha version</source>
-        <translation type="unfinished"></translation>
+        <translation>Alpha versio</translation>
     </message>
     <message>
         <location filename="../EventDialog.qml" line="131"/>
         <source>Some features are not developed yet</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaikki ominaisuudet eivät vielä ole käytettävissä</translation>
     </message>
 </context>
 <context>
@@ -29,7 +29,7 @@
     <message>
         <location filename="../MonthSelector.qml" line="28"/>
         <source>Select a date:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse päivämäärä:</translation>
     </message>
 </context>
 <context>
@@ -37,7 +37,7 @@
     <message>
         <location filename="asteroid-calendar.desktop.h" line="5"/>
         <source>Agenda</source>
-        <translation type="unfinished"></translation>
+        <translation>Syy</translation>
     </message>
 </context>
 <context>
@@ -45,7 +45,7 @@
     <message>
         <location filename="../main.qml" line="237"/>
         <source>%1 Events on %2 %3/%4/%5</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Tapahtumaa päivänä %2 %3/%4/%5</translation>
     </message>
 </context>
 </TS>
