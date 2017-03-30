@@ -106,37 +106,16 @@ Item {
         }
     }
 
-    Icon {
-        id: alertIcon
-        height: parent.height*0.2
-        width: height
-        name: "ios-alert"
-        color: "white"
-        anchors.left: parent.left
-        anchors.leftMargin: parent.width*0.1
+    TextField {
+        width: parent.width*0.8
         anchors.top: timeSelector.bottom
-        anchors.topMargin: parent.height*0.05
+        anchors.topMargin: parent.height*0.1
+        anchors.horizontalCenter: parent.horizontalCenter
+        previewText: "Title"
     }
-    Text {
-        id: alphaTxt
-        text: qsTr("Alpha version")
-        font.bold: true
-        color: "white"
-        anchors.leftMargin: parent.width*0.05
-        anchors.left: alertIcon.right
-        anchors.top: timeSelector.bottom
-        anchors.topMargin: parent.height*0.03
-    }
-    Text {
-        text: qsTr("Some features are not developed yet")
-        width: parent.width*0.6
-        clip: true
-        elide: Text.ElideRight
-        wrapMode: Text.WordWrap
-        color: "white"
-        anchors.leftMargin: parent.width*0.06
-        anchors.left: alertIcon.right
-        anchors.top: alphaTxt.bottom
+
+    HandWritingKeyboard {
+        anchors.fill: parent
     }
 
     IconButton {
