@@ -14,14 +14,22 @@
         <translation>Modifica Evento</translation>
     </message>
     <message>
-        <location filename="../EventDialog.qml" line="122"/>
-        <source>Alpha version</source>
-        <translation>Versione Alpha</translation>
+        <location filename="../EventDialog.qml" line="115"/>
+        <source>Title</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../EventDialog.qml" line="131"/>
+        <location filename="../EventDialog.qml" line="154"/>
+        <source>Untitled event</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alpha version</source>
+        <translation type="vanished">Versione Alpha</translation>
+    </message>
+    <message>
         <source>Some features are not developed yet</source>
-        <translation>Alcune funzionalità non sono ancora implementate</translation>
+        <translation type="vanished">Alcune funzionalità non sono ancora implementate</translation>
     </message>
 </context>
 <context>
@@ -43,7 +51,7 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="../main.qml" line="237"/>
+        <location filename="../main.qml" line="235"/>
         <source>%1 Events on %2 %3/%4/%5</source>
         <translation>%1 Eventi il %2 %3/%4/%5</translation>
     </message>

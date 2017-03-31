@@ -112,7 +112,7 @@ Item {
         anchors.top: timeSelector.bottom
         anchors.topMargin: parent.height*0.1
         anchors.horizontalCenter: parent.horizontalCenter
-        previewText: "Title"
+        previewText: qsTr("Title")
     }
 
     HandWritingKeyboard {
@@ -151,7 +151,7 @@ Item {
             if(titleField.length)
                 event.displayLabel = titleField.text
             else
-                event.displayLabel = "Untitled event"
+                event.displayLabel = qsTr("Untitled event")
             event.location = "Event Location"
             event.description = "Event Description"
 

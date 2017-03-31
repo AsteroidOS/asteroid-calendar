@@ -14,13 +14,13 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../EventDialog.qml" line="122"/>
-        <source>Alpha version</source>
+        <location filename="../EventDialog.qml" line="115"/>
+        <source>Title</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../EventDialog.qml" line="131"/>
-        <source>Some features are not developed yet</source>
+        <location filename="../EventDialog.qml" line="154"/>
+        <source>Untitled event</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -43,7 +43,7 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="../main.qml" line="237"/>
+        <location filename="../main.qml" line="235"/>
         <source>%1 Events on %2 %3/%4/%5</source>
         <translation type="unfinished"></translation>
     </message>
