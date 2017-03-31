@@ -107,6 +107,7 @@ Item {
     }
 
     TextField {
+        id: titleField
         width: parent.width*0.8
         anchors.top: timeSelector.bottom
         anchors.topMargin: parent.height*0.1
@@ -147,7 +148,10 @@ Item {
         onClicked: {
             var event = (typeof event !== 'undefined' ? Calendar.createModification(event)
                                                       : Calendar.createNewEvent())
-            event.displayLabel = "Event Name"
+            if(titleField.length)
+                event.displayLabel = titleField.text
+            else
+                event.displayLabel = "Untitled event"
             event.location = "Event Location"
             event.description = "Event Description"
 
