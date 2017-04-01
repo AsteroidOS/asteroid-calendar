@@ -37,7 +37,7 @@
     <message>
         <location filename="asteroid-calendar.desktop.h" line="5"/>
         <source>Agenda</source>
-        <translation type="unfinished"></translation>
+        <translation>Agenda</translation>
     </message>
 </context>
 <context>
