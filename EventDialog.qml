@@ -148,7 +148,7 @@ Item {
         onClicked: {
             var event = (typeof event !== 'undefined' ? Calendar.createModification(event)
                                                       : Calendar.createNewEvent())
-            if(titleField.length)
+            if(titleField.text.length)
                 event.displayLabel = titleField.text
             else
                 event.displayLabel = qsTr("Untitled event")
