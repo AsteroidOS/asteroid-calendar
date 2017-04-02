@@ -127,7 +127,7 @@ Item {
         anchors.right: parent.horizontalCenter
         anchors.rightMargin: 5
         anchors.bottom: parent.bottom
-        anchors.bottomMargin: app.height/28
+        anchors.bottomMargin: root.height/28
         onClicked: {
             // TODO: delete event
             root.pop()
@@ -139,7 +139,7 @@ Item {
         anchors.leftMargin: 5
         anchors.horizontalCenter: typeof event !== 'undefined' ? undefined : parent.horizontalCenter
         anchors.bottom: parent.bottom
-        anchors.bottomMargin: app.height/28
+        anchors.bottomMargin: root.height/28
 
         iconName: typeof event !== 'undefined' ? "ios-checkmark-circle-outline" : "ios-add-circle-outline"
         iconColor: "white"
