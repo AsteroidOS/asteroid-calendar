@@ -14,14 +14,22 @@
         <translation>நிகழ்வை திருத்து</translation>
     </message>
     <message>
-        <location filename="../EventDialog.qml" line="122"/>
-        <source>Alpha version</source>
-        <translation>ஆல்பா பதிப்பு</translation>
+        <location filename="../EventDialog.qml" line="115"/>
+        <source>Title</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../EventDialog.qml" line="131"/>
+        <location filename="../EventDialog.qml" line="154"/>
+        <source>Untitled event</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alpha version</source>
+        <translation type="vanished">ஆல்பா பதிப்பு</translation>
+    </message>
+    <message>
         <source>Some features are not developed yet</source>
-        <translation>சில அம்சங்கள் இன்னும் அபிவிருத்தி செய்யப்படவில்லை</translation>
+        <translation type="vanished">சில அம்சங்கள் இன்னும் அபிவிருத்தி செய்யப்படவில்லை</translation>
     </message>
 </context>
 <context>
@@ -43,7 +51,7 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="../main.qml" line="237"/>
+        <location filename="../main.qml" line="235"/>
         <source>%1 Events on %2 %3/%4/%5</source>
         <translation>%1 அன்றைய நிகழ்வுகள் %2 %3/%4/%5</translation>
     </message>

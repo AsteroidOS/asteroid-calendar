@@ -106,37 +106,17 @@ Item {
         }
     }
 
-    Icon {
-        id: alertIcon
-        height: parent.height*0.2
-        width: height
-        name: "ios-alert"
-        color: "white"
-        anchors.left: parent.left
-        anchors.leftMargin: parent.width*0.1
+    TextField {
+        id: titleField
+        width: parent.width*0.8
         anchors.top: timeSelector.bottom
-        anchors.topMargin: parent.height*0.05
+        anchors.topMargin: parent.height*0.1
+        anchors.horizontalCenter: parent.horizontalCenter
+        previewText: qsTr("Title")
     }
-    Text {
-        id: alphaTxt
-        text: qsTr("Alpha version")
-        font.bold: true
-        color: "white"
-        anchors.leftMargin: parent.width*0.05
-        anchors.left: alertIcon.right
-        anchors.top: timeSelector.bottom
-        anchors.topMargin: parent.height*0.03
-    }
-    Text {
-        text: qsTr("Some features are not developed yet")
-        width: parent.width*0.6
-        clip: true
-        elide: Text.ElideRight
-        wrapMode: Text.WordWrap
-        color: "white"
-        anchors.leftMargin: parent.width*0.06
-        anchors.left: alertIcon.right
-        anchors.top: alphaTxt.bottom
+
+    HandWritingKeyboard {
+        anchors.fill: parent
     }
 
     IconButton {
@@ -147,7 +127,7 @@ Item {
         anchors.right: parent.horizontalCenter
         anchors.rightMargin: 5
         anchors.bottom: parent.bottom
-        anchors.bottomMargin: app.height/28
+        anchors.bottomMargin: root.height/28
         onClicked: {
             // TODO: delete event
             root.pop()
@@ -159,7 +139,7 @@ Item {
         anchors.leftMargin: 5
         anchors.horizontalCenter: typeof event !== 'undefined' ? undefined : parent.horizontalCenter
         anchors.bottom: parent.bottom
-        anchors.bottomMargin: app.height/28
+        anchors.bottomMargin: root.height/28
 
         iconName: typeof event !== 'undefined' ? "ios-checkmark-circle-outline" : "ios-add-circle-outline"
         iconColor: "white"
@@ -168,7 +148,10 @@ Item {
         onClicked: {
             var event = (typeof event !== 'undefined' ? Calendar.createModification(event)
                                                       : Calendar.createNewEvent())
-            event.displayLabel = "Event Name"
+            if(titleField.text.length)
+                event.displayLabel = titleField.text
+            else
+                event.displayLabel = qsTr("Untitled event")
             event.location = "Event Location"
             event.description = "Event Description"
 
