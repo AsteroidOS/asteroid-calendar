@@ -6,26 +6,26 @@
     <message>
         <location filename="../EventDialog.qml" line="36"/>
         <source>New Event</source>
-        <translation>Nieuw Evenement</translation>
+        <translation>Nieuwe gebeurtenis</translation>
     </message>
     <message>
         <location filename="../EventDialog.qml" line="36"/>
         <source>Edit Event</source>
-        <translation>Bewerk Evenement</translation>
+        <translation>Gebeurtenis bewerken</translation>
     </message>
     <message>
         <location filename="../EventDialog.qml" line="115"/>
         <source>Title</source>
-        <translation>Titel</translation>
+        <translation>Naam</translation>
     </message>
     <message>
         <location filename="../EventDialog.qml" line="154"/>
         <source>Untitled event</source>
-        <translation>Naamloos evenement</translation>
+        <translation>Naamloze gebeurtenis</translation>
     </message>
     <message>
         <source>Alpha version</source>
-        <translation type="vanished">Alpha versie</translation>
+        <translation>Alfaversie</translation>
     </message>
     <message>
         <source>Some features are not developed yet</source>
@@ -53,7 +53,7 @@
     <message>
         <location filename="../main.qml" line="235"/>
         <source>%1 Events on %2 %3/%4/%5</source>
-        <translation>%1 Evenementen op %2 %3/%4/%5</translation>
+        <translation>%1 gebeurtenissen op %2 %3/%4/%5</translation>
     </message>
 </context>
 </TS>
