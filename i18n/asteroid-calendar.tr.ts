@@ -53,7 +53,7 @@
     <message>
         <location filename="../main.qml" line="235"/>
         <source>%1 Events on %2 %3/%4/%5</source>
-        <translation>% 1 Olaylar% 2% 3 /% 4 /% 5</translation>
+        <translation>%2 %3/%4/%5 Tarihinde %1 Etkinlik</translation>
     </message>
 </context>
 </TS>
