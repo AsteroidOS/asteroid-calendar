@@ -16,20 +16,20 @@
     <message>
         <location filename="../EventDialog.qml" line="115"/>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Başlık</translation>
     </message>
     <message>
         <location filename="../EventDialog.qml" line="154"/>
         <source>Untitled event</source>
-        <translation type="unfinished"></translation>
+        <translation>Başlıksız etkinlik</translation>
     </message>
     <message>
         <source>Alpha version</source>
-        <translation type="vanished">Alfa Versiyonu</translation>
+        <translation>Alpha sürümü</translation>
     </message>
     <message>
         <source>Some features are not developed yet</source>
-        <translation type="vanished">Bazı özellikler henüz gelişmedi</translation>
+        <translation>Bazı özellikler henüz geliştirilmedi</translation>
     </message>
 </context>
 <context>
@@ -37,7 +37,7 @@
     <message>
         <location filename="../MonthSelector.qml" line="28"/>
         <source>Select a date:</source>
-        <translation>Tarih Seç:</translation>
+        <translation>Tarih seç:</translation>
     </message>
 </context>
 <context>
@@ -45,7 +45,7 @@
     <message>
         <location filename="asteroid-calendar.desktop.h" line="5"/>
         <source>Agenda</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajanda</translation>
     </message>
 </context>
 <context>
