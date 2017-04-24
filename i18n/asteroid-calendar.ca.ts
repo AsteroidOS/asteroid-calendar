@@ -11,17 +11,17 @@
     <message>
         <location filename="../EventDialog.qml" line="36"/>
         <source>Edit Event</source>
-        <translation>Editar l&apos;esdeveniment</translation>
+        <translation>Editar l'esdeveniment</translation>
     </message>
     <message>
         <location filename="../EventDialog.qml" line="115"/>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Títol</translation>
     </message>
     <message>
         <location filename="../EventDialog.qml" line="154"/>
         <source>Untitled event</source>
-        <translation type="unfinished"></translation>
+        <translation>Esdeveniment sense títol</translation>
     </message>
     <message>
         <source>Alpha version</source>
@@ -45,7 +45,7 @@
     <message>
         <location filename="asteroid-calendar.desktop.h" line="5"/>
         <source>Agenda</source>
-        <translation type="unfinished"></translation>
+        <translation>Agenda</translation>
     </message>
 </context>
 <context>
