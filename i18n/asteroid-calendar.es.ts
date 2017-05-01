@@ -6,22 +6,22 @@
     <message>
         <location filename="../EventDialog.qml" line="36"/>
         <source>New Event</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuevo evento</translation>
     </message>
     <message>
         <location filename="../EventDialog.qml" line="36"/>
         <source>Edit Event</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar evento</translation>
     </message>
     <message>
         <location filename="../EventDialog.qml" line="115"/>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Título</translation>
     </message>
     <message>
         <location filename="../EventDialog.qml" line="154"/>
         <source>Untitled event</source>
-        <translation type="unfinished"></translation>
+        <translation>Evento destitulado</translation>
     </message>
 </context>
 <context>
@@ -29,7 +29,7 @@
     <message>
         <location filename="../MonthSelector.qml" line="28"/>
         <source>Select a date:</source>
-        <translation type="unfinished"></translation>
+        <translation>Elegir fecha</translation>
     </message>
 </context>
 <context>
@@ -37,7 +37,7 @@
     <message>
         <location filename="asteroid-calendar.desktop.h" line="5"/>
         <source>Agenda</source>
-        <translation type="unfinished"></translation>
+        <translation>Agenda</translation>
     </message>
 </context>
 <context>
@@ -45,7 +45,7 @@
     <message>
         <location filename="../main.qml" line="235"/>
         <source>%1 Events on %2 %3/%4/%5</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Eventos en %2 %3/%4/%5</translation>
     </message>
 </context>
 </TS>
