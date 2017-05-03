@@ -20,6 +20,8 @@ import org.nemomobile.calendar 1.0
 import org.asteroid.controls 1.0
 
 Application {
+    id: app
+
     centerColor: "#EA9C14"
     outerColor: "#5E3F08"
     property color overlayColor: "#b07414"
