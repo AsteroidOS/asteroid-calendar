@@ -120,7 +120,7 @@ Item {
     }
 
     IconButton {
-        iconName: "ios-close-circle-outline"
+        iconName: "ios-trash-circle"
         iconColor: "white"
         pressedIconColor: "lightgrey"
         visible: typeof event !== 'undefined'

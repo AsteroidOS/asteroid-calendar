@@ -92,7 +92,7 @@ Application {
 
                     Text {
                         id: hour
-                        text: Qt.formatTime(model.occurrence.startTime)
+                        text: Qt.formatTime(model.occurrence.startTime, "hh:mm")
                         color: "white"
                         horizontalAlignment: Text.AlignRight
                         anchors.verticalCenter: parent.verticalCenter
