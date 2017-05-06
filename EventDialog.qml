@@ -146,8 +146,11 @@ Item {
         pressedIconColor: "lightgrey"
 
         onClicked: {
-            var event = (typeof event !== 'undefined' ? Calendar.createModification(event)
-                                                      : Calendar.createNewEvent())
+            if(typeof event !== 'undefined')
+                Calendar.removeAll(event.uniqueId)
+
+            event = Calendar.createNewEvent()
+
             if(titleField.text.length)
                 event.displayLabel = titleField.text
             else
