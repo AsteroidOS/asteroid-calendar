@@ -129,7 +129,7 @@ Item {
         anchors.bottom: parent.bottom
         anchors.bottomMargin: root.height/28
         onClicked: {
-            // TODO: delete event
+            Calendar.removeAll(event.uniqueId)
             root.pop()
         }
     }
@@ -180,6 +180,7 @@ Item {
         else {
             hourLV.currentIndex   = event.startTime.getHours();
             minuteLV.currentIndex = event.startTime.getMinutes();
+            titleField.text = event.displayLabel
         }
     }
 }

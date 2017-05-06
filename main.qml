@@ -85,7 +85,7 @@ Application {
                         else animateToMonthView()
                     }
                 }
-                delegate: Item {
+                delegate: MouseArea {
                     height: agenda.contentY > -daySelectorHeight/2 ? dayInfoHeight*1.7 : dayInfoHeight
                     width: parent.width
                     Behavior on height { NumberAnimation { duration: 100 } }
@@ -110,6 +110,8 @@ Application {
                         anchors.verticalCenter: parent.verticalCenter
                         font.pixelSize: parent.height/2.5
                     }
+
+                    onClicked: layerStack.push(eventDialogLayer, {"event": model.event})
                 }
                 header: Item { height: daySelectorHeight }
                 footer: Item { height: Math.max(2*dayInfoHeight, agenda.height-agenda.count*dayInfoHeight*1.7) - (DeviceInfo.hasRoundScreen ? dayInfoHeight/2 : 0) }
