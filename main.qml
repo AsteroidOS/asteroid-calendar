@@ -20,6 +20,8 @@ import org.nemomobile.calendar 1.0
 import org.asteroid.controls 1.0
 
 Application {
+    id: app
+
     centerColor: "#EA9C14"
     outerColor: "#5E3F08"
     property color overlayColor: "#b07414"
@@ -83,14 +85,14 @@ Application {
                         else animateToMonthView()
                     }
                 }
-                delegate: Item {
+                delegate: MouseArea {
                     height: agenda.contentY > -daySelectorHeight/2 ? dayInfoHeight*1.7 : dayInfoHeight
                     width: parent.width
                     Behavior on height { NumberAnimation { duration: 100 } }
 
                     Text {
                         id: hour
-                        text: Qt.formatTime(model.occurrence.startTime)
+                        text: Qt.formatTime(model.occurrence.startTime, "hh:mm")
                         color: "white"
                         horizontalAlignment: Text.AlignRight
                         anchors.verticalCenter: parent.verticalCenter
@@ -108,6 +110,8 @@ Application {
                         anchors.verticalCenter: parent.verticalCenter
                         font.pixelSize: parent.height/2.5
                     }
+
+                    onClicked: layerStack.push(eventDialogLayer, {"event": model.event})
                 }
                 header: Item { height: daySelectorHeight }
                 footer: Item { height: Math.max(2*dayInfoHeight, agenda.height-agenda.count*dayInfoHeight*1.7) - (DeviceInfo.hasRoundScreen ? dayInfoHeight/2 : 0) }

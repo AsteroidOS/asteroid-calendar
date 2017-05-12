@@ -120,7 +120,7 @@ Item {
     }
 
     IconButton {
-        iconName: "ios-close-circle-outline"
+        iconName: "ios-trash-circle"
         iconColor: "white"
         pressedIconColor: "lightgrey"
         visible: typeof event !== 'undefined'
@@ -129,7 +129,7 @@ Item {
         anchors.bottom: parent.bottom
         anchors.bottomMargin: root.height/28
         onClicked: {
-            // TODO: delete event
+            Calendar.removeAll(event.uniqueId)
             root.pop()
         }
     }
@@ -146,8 +146,11 @@ Item {
         pressedIconColor: "lightgrey"
 
         onClicked: {
-            var event = (typeof event !== 'undefined' ? Calendar.createModification(event)
-                                                      : Calendar.createNewEvent())
+            if(typeof event !== 'undefined')
+                Calendar.removeAll(event.uniqueId)
+
+            event = Calendar.createNewEvent()
+
             if(titleField.text.length)
                 event.displayLabel = titleField.text
             else
@@ -180,6 +183,7 @@ Item {
         else {
             hourLV.currentIndex   = event.startTime.getHours();
             minuteLV.currentIndex = event.startTime.getMinutes();
+            titleField.text = event.displayLabel
         }
     }
 }

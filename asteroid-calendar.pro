@@ -16,7 +16,7 @@ lupdate_only{
 
 # Needed for lupdate
 TRANSLATIONS = i18n/asteroid-calendar.ca.ts \
-               i18n/asteroid-calendar.de.ts \
+               i18n/asteroid-calendar.de_DE.ts \
                i18n/asteroid-calendar.el.ts \
                i18n/asteroid-calendar.es.ts \
                i18n/asteroid-calendar.fa.ts \
@@ -25,7 +25,7 @@ TRANSLATIONS = i18n/asteroid-calendar.ca.ts \
                i18n/asteroid-calendar.it.ts \
                i18n/asteroid-calendar.kab.ts \
                i18n/asteroid-calendar.ko.ts \
-               i18n/asteroid-calendar.nl.ts \
+               i18n/asteroid-calendar.nl_NL.ts \
                i18n/asteroid-calendar.pl.ts \
                i18n/asteroid-calendar.pt_BR.ts \
                i18n/asteroid-calendar.ru.ts \
