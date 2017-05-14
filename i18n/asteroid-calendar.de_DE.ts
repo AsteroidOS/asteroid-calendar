@@ -16,7 +16,7 @@
     <message>
         <location filename="../EventDialog.qml" line="115"/>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Titel</translation>
     </message>
     <message>
         <location filename="../EventDialog.qml" line="154"/>
