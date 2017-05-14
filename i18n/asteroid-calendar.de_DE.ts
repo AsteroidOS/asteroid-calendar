@@ -21,7 +21,7 @@
     <message>
         <location filename="../EventDialog.qml" line="157"/>
         <source>Untitled event</source>
-        <translation type="unfinished"></translation>
+        <translation>Unbenannter Termin</translation>
     </message>
     <message>
         <source>Alpha version</source>
