@@ -19,13 +19,13 @@
         <translation>Naam</translation>
     </message>
     <message>
-        <location filename="../EventDialog.qml" line="154"/>
+        <location filename="../EventDialog.qml" line="157"/>
         <source>Untitled event</source>
         <translation>Naamloze gebeurtenis</translation>
     </message>
     <message>
         <source>Alpha version</source>
-        <translation>Alfaversie</translation>
+        <translation type="vanished">Alfaversie</translation>
     </message>
     <message>
         <source>Some features are not developed yet</source>
@@ -51,7 +51,7 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="../main.qml" line="235"/>
+        <location filename="../main.qml" line="239"/>
         <source>%1 Events on %2 %3/%4/%5</source>
         <translation>%1 gebeurtenissen op %2 %3/%4/%5</translation>
     </message>

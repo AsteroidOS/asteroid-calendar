@@ -20,6 +20,7 @@ TRANSLATIONS = i18n/asteroid-calendar.ca.ts \
                i18n/asteroid-calendar.el.ts \
                i18n/asteroid-calendar.es.ts \
                i18n/asteroid-calendar.fa.ts \
+               i18n/asteroid-calendar.fi.ts \
                i18n/asteroid-calendar.fr.ts \
                i18n/asteroid-calendar.hu.ts \
                i18n/asteroid-calendar.it.ts \

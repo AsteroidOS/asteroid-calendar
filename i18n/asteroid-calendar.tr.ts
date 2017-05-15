@@ -19,17 +19,17 @@
         <translation>Başlık</translation>
     </message>
     <message>
-        <location filename="../EventDialog.qml" line="154"/>
+        <location filename="../EventDialog.qml" line="157"/>
         <source>Untitled event</source>
         <translation>Başlıksız etkinlik</translation>
     </message>
     <message>
         <source>Alpha version</source>
-        <translation>Alpha sürümü</translation>
+        <translation type="vanished">Alpha sürümü</translation>
     </message>
     <message>
         <source>Some features are not developed yet</source>
-        <translation>Bazı özellikler henüz geliştirilmedi</translation>
+        <translation type="vanished">Bazı özellikler henüz geliştirilmedi</translation>
     </message>
 </context>
 <context>
@@ -51,7 +51,7 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="../main.qml" line="235"/>
+        <location filename="../main.qml" line="239"/>
         <source>%1 Events on %2 %3/%4/%5</source>
         <translation>%2 %3/%4/%5 Tarihinde %1 Etkinlik</translation>
     </message>
