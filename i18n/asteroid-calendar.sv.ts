@@ -19,7 +19,7 @@
         <translation>Titel</translation>
     </message>
     <message>
-        <location filename="../EventDialog.qml" line="154"/>
+        <location filename="../EventDialog.qml" line="157"/>
         <source>Untitled event</source>
         <translation>Onämnd event</translation>
     </message>
@@ -51,7 +51,7 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="../main.qml" line="235"/>
+        <location filename="../main.qml" line="239"/>
         <source>%1 Events on %2 %3/%4/%5</source>
         <translation>%1 Händelser vid %2 %3/%4/%5</translation>
     </message>
