@@ -6,30 +6,30 @@
     <message>
         <location filename="../EventDialog.qml" line="36"/>
         <source>New Event</source>
-        <translation type="unfinished"></translation>
+        <translation>Ny Begivenhed</translation>
     </message>
     <message>
         <location filename="../EventDialog.qml" line="36"/>
         <source>Edit Event</source>
-        <translation type="unfinished"></translation>
+        <translation>Ret Begivenhed</translation>
     </message>
     <message>
         <location filename="../EventDialog.qml" line="115"/>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Titel</translation>
     </message>
     <message>
         <location filename="../EventDialog.qml" line="157"/>
         <source>Untitled event</source>
-        <translation type="unfinished"></translation>
+        <translation>Unavngiven begivenhed</translation>
     </message>
     <message>
         <source>Alpha version</source>
-        <translation type="unfinished"></translation>
+        <translation>Alpha version</translation>
     </message>
     <message>
         <source>Some features are not developed yet</source>
-        <translation type="unfinished"></translation>
+        <translation>Nogle features er endnu ikke implementeret</translation>
     </message>
 </context>
 <context>
@@ -37,7 +37,7 @@
     <message>
         <location filename="../MonthSelector.qml" line="28"/>
         <source>Select a date:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vælg dato:</translation>
     </message>
 </context>
 <context>
@@ -45,7 +45,7 @@
     <message>
         <location filename="asteroid-calendar.desktop.h" line="5"/>
         <source>Agenda</source>
-        <translation type="unfinished"></translation>
+        <translation>Agenda</translation>
     </message>
 </context>
 <context>
@@ -53,7 +53,7 @@
     <message>
         <location filename="../main.qml" line="239"/>
         <source>%1 Events on %2 %3/%4/%5</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Begivenheder på %2 %3/%4/%5</translation>
     </message>
 </context>
 </TS>
