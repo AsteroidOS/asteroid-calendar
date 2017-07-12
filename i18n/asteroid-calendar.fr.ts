@@ -11,17 +11,17 @@
     <message>
         <location filename="../EventDialog.qml" line="36"/>
         <source>Edit Event</source>
-        <translation>Éditer l&apos;événement</translation>
+        <translation>Éditer l'événement</translation>
     </message>
     <message>
         <location filename="../EventDialog.qml" line="115"/>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Titre</translation>
     </message>
     <message>
         <location filename="../EventDialog.qml" line="157"/>
         <source>Untitled event</source>
-        <translation type="unfinished"></translation>
+        <translation>Événement sans titre</translation>
     </message>
     <message>
         <source>Alpha version</source>
