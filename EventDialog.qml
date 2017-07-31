@@ -15,7 +15,7 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.0
+import QtQuick 2.9
 import org.nemomobile.time 1.0
 import org.nemomobile.calendar 1.0
 import org.asteroid.controls 1.0
@@ -34,7 +34,7 @@ Item {
         id: title
         color: "white"
         text: typeof event === 'undefined' ? qsTr("New Event").toUpperCase() : qsTr("Edit Event").toUpperCase()
-        height: parent.height*0.15
+        height: Dims.h(15)
         anchors.top: parent.top
         anchors.left: parent.left
         anchors.right: parent.right
@@ -47,19 +47,19 @@ Item {
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.top: title.bottom
-        anchors.topMargin: parent.height*0.05
-        height: parent.height*0.28
+        anchors.topMargin: Dims.h(5)
+        height: Dims.h(28)
 
         ListView {
             id: hourLV
             height: parent.height
-            width: parent.width/2-1
+            width: Dims.w(50)
             clip: true
-            spacing: 6
+            spacing: Dims.h(2)
             model: 24
             delegate: Item {
                 width: hourLV.width
-                height: 30
+                height: Dims.h(10)
                 Text {
                     text: index
                     anchors.centerIn: parent
@@ -69,8 +69,8 @@ Item {
                     Behavior on color { ColorAnimation { } }
                 }
             }
-            preferredHighlightBegin: height / 2 - 15
-            preferredHighlightEnd: height / 2 + 15
+            preferredHighlightBegin: height / 2 - Dims.h(5)
+            preferredHighlightEnd: height / 2 + Dims.h(5)
             highlightRangeMode: ListView.StrictlyEnforceRange
         }
 
@@ -84,13 +84,13 @@ Item {
         ListView {
             id: minuteLV
             height: parent.height
-            width: parent.width/2-1
+            width: Dims.w(50)
             clip: true
-            spacing: 6
+            spacing: Dims.h(2)
             model: 60
             delegate: Item {
                 width: minuteLV.width
-                height: 30
+                height: Dims.h(10)
                 Text {
                     text: zeroPadding(index)
                     anchors.centerIn: parent
@@ -100,17 +100,17 @@ Item {
                     Behavior on color { ColorAnimation { } }
                 }
             }
-            preferredHighlightBegin: height / 2 - 15
-            preferredHighlightEnd: height / 2 + 15
+            preferredHighlightBegin: height / 2 - Dims.h(5)
+            preferredHighlightEnd: height / 2 + Dims.h(5)
             highlightRangeMode: ListView.StrictlyEnforceRange
         }
     }
 
     TextField {
         id: titleField
-        width: parent.width*0.8
+        width: Dims.w(80)
         anchors.top: timeSelector.bottom
-        anchors.topMargin: parent.height*0.1
+        anchors.topMargin: Dims.h(10)
         anchors.horizontalCenter: parent.horizontalCenter
         previewText: qsTr("Title")
     }
@@ -125,9 +125,9 @@ Item {
         pressedIconColor: "lightgrey"
         visible: typeof event !== 'undefined'
         anchors.right: parent.horizontalCenter
-        anchors.rightMargin: 5
+        anchors.rightMargin: Dims.w(2)
         anchors.bottom: parent.bottom
-        anchors.bottomMargin: root.height/28
+        anchors.bottomMargin: Dims.iconButtonMargin
         onClicked: {
             Calendar.removeAll(event.uniqueId)
             root.pop()
@@ -136,10 +136,10 @@ Item {
 
     IconButton {
         anchors.left: typeof event !== 'undefined' ? parent.horizontalCenter : undefined
-        anchors.leftMargin: 5
+        anchors.leftMargin: Dims.w(2)
         anchors.horizontalCenter: typeof event !== 'undefined' ? undefined : parent.horizontalCenter
         anchors.bottom: parent.bottom
-        anchors.bottomMargin: root.height/28
+        anchors.bottomMargin: Dims.iconButtonMargin
 
         iconName: typeof event !== 'undefined' ? "ios-checkmark-circle-outline" : "ios-add-circle-outline"
         iconColor: "white"
