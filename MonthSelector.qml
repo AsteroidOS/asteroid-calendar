@@ -41,43 +41,30 @@ Item {
         anchors.top: title.bottom
         height: Dims.h(60)
 
-        ListView {
+        CircularSpinner {
             id: monthLV
             height: parent.height
-            width: Dims.w(50)
-            clip: true
-            spacing: Dims.h(2)
+            width: parent.width/2
             model: 12
+            showSeparator: true
             delegate: Item {
                 width: monthLV.width
                 height: Dims.h(10)
                 Text {
                     text: Qt.locale().monthName(index, Locale.ShortFormat)
                     anchors.centerIn: parent
-                    color: parent.ListView.isCurrentItem ? "white" : "lightgrey"
-                    scale: parent.ListView.isCurrentItem ? 1.5 : 1
+                    color: parent.PathView.isCurrentItem ? "#FFFFFF" : "#88FFFFFF"
+                    scale: parent.PathView.isCurrentItem ? 1.7 : 1
                     Behavior on scale { NumberAnimation { duration: 200 } }
-                    Behavior on color { ColorAnimation { } }
+                    Behavior on color { ColorAnimation { duration: 200 } }
                 }
             }
-            preferredHighlightBegin: height / 2 - Dims.h(5)
-            preferredHighlightEnd: height / 2 + Dims.h(5)
-            highlightRangeMode: ListView.StrictlyEnforceRange
         }
 
-        Rectangle {
-            width: 1
-            height: parent.height*0.8
-            color: "lightgrey"
-            anchors.verticalCenter: parent.verticalCenter
-        }
-
-        ListView {
+        CircularSpinner {
             id: yearLV
             height: parent.height
-            width: Dims.w(50)
-            clip: true
-            spacing: Dims.h(2)
+            width: parent.width/2
             model: 100
             delegate: Item {
                 width: yearLV.width
@@ -85,17 +72,14 @@ Item {
                 Text {
                     text: index+2000
                     anchors.centerIn: parent
-                    color: parent.ListView.isCurrentItem ? "white" : "lightgrey"
-                    scale: parent.ListView.isCurrentItem ? 1.5 : 1
+                    color: parent.PathView.isCurrentItem ? "#FFFFFF" : "#88FFFFFF"
+                    scale: parent.PathView.isCurrentItem ? 1.5 : 1
                     Behavior on scale { NumberAnimation { duration: 200 } }
-                    Behavior on color { ColorAnimation { } }
+                    Behavior on color { ColorAnimation { duration: 200 } }
                 }
             }
-            preferredHighlightBegin: height / 2 - Dims.h(5)
-            preferredHighlightEnd: height / 2 + Dims.h(5)
-            highlightRangeMode: ListView.StrictlyEnforceRange
         }
-    }
+   }
 
     Component.onCompleted: {
         monthLV.currentIndex = month-1;
