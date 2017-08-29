@@ -15,7 +15,7 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.0
+import QtQuick 2.9
 import org.asteroid.controls 1.0
 
 Item {
@@ -26,7 +26,7 @@ Item {
         id: title
         color: "white"
         text: qsTr("Select a date:")
-        height: parent.height*0.2
+        height: Dims.h(20)
         anchors.top: parent.top
         anchors.left: parent.left
         anchors.right: parent.right
@@ -39,63 +39,47 @@ Item {
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.top: title.bottom
-        height: parent.height*0.6
+        height: Dims.h(60)
 
-        ListView {
+        CircularSpinner {
             id: monthLV
             height: parent.height
-            width: parent.width/2-1
-            clip: true
-            spacing: 15
+            width: parent.width/2
             model: 12
+            showSeparator: true
             delegate: Item {
                 width: monthLV.width
-                height: 30
+                height: Dims.h(10)
                 Text {
                     text: Qt.locale().monthName(index, Locale.ShortFormat)
                     anchors.centerIn: parent
-                    color: parent.ListView.isCurrentItem ? "white" : "lightgrey"
-                    scale: parent.ListView.isCurrentItem ? 1.5 : 1
+                    color: parent.PathView.isCurrentItem ? "#FFFFFF" : "#88FFFFFF"
+                    scale: parent.PathView.isCurrentItem ? 1.7 : 1
                     Behavior on scale { NumberAnimation { duration: 200 } }
-                    Behavior on color { ColorAnimation { } }
+                    Behavior on color { ColorAnimation { duration: 200 } }
                 }
             }
-            preferredHighlightBegin: height / 2 - 15
-            preferredHighlightEnd: height / 2 + 15
-            highlightRangeMode: ListView.StrictlyEnforceRange
         }
 
-        Rectangle {
-            width: 1
-            height: parent.height*0.8
-            color: "lightgrey"
-            anchors.verticalCenter: parent.verticalCenter
-        }
-
-        ListView {
+        CircularSpinner {
             id: yearLV
             height: parent.height
-            width: parent.width/2-1
-            clip: true
-            spacing: 15
+            width: parent.width/2
             model: 100
             delegate: Item {
                 width: yearLV.width
-                height: 30
+                height: Dims.h(10)
                 Text {
                     text: index+2000
                     anchors.centerIn: parent
-                    color: parent.ListView.isCurrentItem ? "white" : "lightgrey"
-                    scale: parent.ListView.isCurrentItem ? 1.5 : 1
+                    color: parent.PathView.isCurrentItem ? "#FFFFFF" : "#88FFFFFF"
+                    scale: parent.PathView.isCurrentItem ? 1.5 : 1
                     Behavior on scale { NumberAnimation { duration: 200 } }
-                    Behavior on color { ColorAnimation { } }
+                    Behavior on color { ColorAnimation { duration: 200 } }
                 }
             }
-            preferredHighlightBegin: height / 2 - 15
-            preferredHighlightEnd: height / 2 + 15
-            highlightRangeMode: ListView.StrictlyEnforceRange
         }
-    }
+   }
 
     Component.onCompleted: {
         monthLV.currentIndex = month-1;
@@ -105,7 +89,7 @@ Item {
     IconButton {
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottom: parent.bottom
-        anchors.bottomMargin: app.height/28
+        anchors.bottomMargin: Dims.iconButtonMargin
 
         iconColor: "white"
         pressedIconColor: "lightgrey"
