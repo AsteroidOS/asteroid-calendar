@@ -21,7 +21,7 @@
     <message>
         <location filename="../EventDialog.qml" line="157"/>
         <source>Untitled event</source>
-        <translation>Evento destitulado</translation>
+        <translation>Evento sin título</translation>
     </message>
 </context>
 <context>
@@ -29,7 +29,7 @@
     <message>
         <location filename="../MonthSelector.qml" line="28"/>
         <source>Select a date:</source>
-        <translation>Elegir fecha</translation>
+        <translation>Elige una fecha:</translation>
     </message>
 </context>
 <context>
