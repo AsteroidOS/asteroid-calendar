@@ -16,12 +16,12 @@
     <message>
         <location filename="../EventDialog.qml" line="115"/>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>제목</translation>
     </message>
     <message>
         <location filename="../EventDialog.qml" line="157"/>
         <source>Untitled event</source>
-        <translation type="unfinished"></translation>
+        <translation>이름 없는 이벤트</translation>
     </message>
     <message>
         <source>Alpha version</source>
