@@ -29,7 +29,7 @@
     </message>
     <message>
         <source>Some features are not developed yet</source>
-        <translation type="vanished">기능들이 아직 개발 중입니다</translation>
+        <translation>일부 기능들은 아직 개발되지 않았습니다</translation>
     </message>
 </context>
 <context>
