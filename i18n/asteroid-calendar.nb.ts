@@ -53,7 +53,7 @@
     <message>
         <location filename="../main.qml" line="239"/>
         <source>%1 Events on %2 %3/%4/%5</source>
-        <translation>%1 Hendelser den</translation>
+        <translation>%1 Hendelser %2 %3/%4/%5</translation>
     </message>
 </context>
 </TS>
