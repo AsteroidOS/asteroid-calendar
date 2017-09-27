@@ -6,12 +6,12 @@
     <message>
         <location filename="../EventDialog.qml" line="36"/>
         <source>New Event</source>
-        <translation>Skapa Händelse</translation>
+        <translation>Ny händelse</translation>
     </message>
     <message>
         <location filename="../EventDialog.qml" line="36"/>
         <source>Edit Event</source>
-        <translation>Redigera Händelse</translation>
+        <translation>Redigera händelse</translation>
     </message>
     <message>
         <location filename="../EventDialog.qml" line="115"/>
@@ -21,11 +21,11 @@
     <message>
         <location filename="../EventDialog.qml" line="157"/>
         <source>Untitled event</source>
-        <translation>Onämnd event</translation>
+        <translation>Namnlös händelse</translation>
     </message>
     <message>
         <source>Alpha version</source>
-        <translation type="vanished">Alpha version</translation>
+        <translation>Alpha-version</translation>
     </message>
     <message>
         <source>Some features are not developed yet</source>
@@ -53,7 +53,7 @@
     <message>
         <location filename="../main.qml" line="239"/>
         <source>%1 Events on %2 %3/%4/%5</source>
-        <translation>%1 Händelser vid %2 %3/%4/%5</translation>
+        <translation>%1 händelser vid %2 %3/%4/%5</translation>
     </message>
 </context>
 </TS>
