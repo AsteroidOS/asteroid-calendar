@@ -17,6 +17,7 @@
 
 import QtQuick 2.9
 import org.nemomobile.calendar 1.0
+import org.nemomobile.configuration 1.0
 import org.asteroid.controls 1.0
 import org.asteroid.utils 1.0
 
@@ -36,6 +37,12 @@ Application {
     function zeroPadding(i) {
         if (i > 9) return i
         else       return "0" + i
+    }
+
+    ConfigurationValue {
+        id: use12H
+        key: "/org/asteroidos/settings/use-12h-format"
+        defaultValue: false
     }
 
     Component  { id: eventDialogLayer;   EventDialog   { } }
@@ -93,13 +100,13 @@ Application {
 
                     Text {
                         id: hour
-                        text: Qt.formatTime(model.occurrence.startTime, "hh:mm")
+                        text: Qt.formatTime(model.occurrence.startTime, use12H.value ? "hh:mm AP" : "hh:mm")
                         color: "white"
                         horizontalAlignment: Text.AlignRight
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.left: parent.left
                         width: parent.width/3
-                        font.pixelSize: parent.height/2.5
+                        font.pixelSize: use12H.value ? parent.height/3.3 : parent.height/2.5
                     }
                     Text {
                         id: title
