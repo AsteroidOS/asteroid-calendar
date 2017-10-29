@@ -18,6 +18,7 @@
 import QtQuick 2.9
 import org.nemomobile.time 1.0
 import org.nemomobile.calendar 1.0
+import org.nemomobile.configuration 1.0
 import org.asteroid.controls 1.0
 
 Item {
@@ -28,6 +29,12 @@ Item {
     function zeroPadding(i) {
         if (i > 9) return i
         else       return "0" + i
+    }
+
+    ConfigurationValue {
+        id: use12H
+        key: "/org/asteroidos/settings/use-12h-format"
+        defaultValue: false
     }
 
     Text {
@@ -50,19 +57,41 @@ Item {
         anchors.topMargin: Dims.h(5)
         height: Dims.h(28)
 
+        property int spinnerWidth: use12H.value ? width/3 : width/2
+
         CircularSpinner {
             id: hourLV
             height: parent.height
-            width: parent.width/2
-            model: 24
+            width: parent.spinnerWidth
+            model: use12H.value ? 24 : 12
             showSeparator: true
         }
 
         CircularSpinner {
             id: minuteLV
             height: parent.height
-            width: parent.width/2
+            width: parent.spinnerWidth
             model: 60
+            showSeparator: use12H.value
+        }
+
+        Spinner {
+            id: amPmLV
+            height: parent.height
+            width: parent.spinnerWidth
+            model: 2
+            delegate: Item {
+                width: amPmLV.width
+                height: Dims.h(10)
+                Text {
+                    text: index == 0 ? "AM" : "PM"
+                    anchors.centerIn: parent
+                    color: parent.ListView.isCurrentItem ? "#FFFFFF" : "#88FFFFFF"
+                    scale: parent.ListView.isCurrentItem ? 1.5 : 1
+                    Behavior on scale { NumberAnimation { duration: 200 } }
+                    Behavior on color { ColorAnimation { duration: 200 } }
+                }
+            }
         }
     }
 
@@ -122,8 +151,12 @@ Item {
             event.unsetRecurEndDate()
             event.reminder = CalendarEvent.ReminderNone
 
-            event.setStartTime(new Date(year, month, day, hourLV.currentIndex, minuteLV.currentIndex), CalendarEvent.SpecLocalZone)
-            event.setEndTime(new Date(year, month, day, (hourLV.currentIndex+1)%24, minuteLV.currentIndex), CalendarEvent.SpecLocalZone)
+            var hour = hourLV.currentIndex;
+            if(use12H.value)
+                hour += amPmLV.currentIndex*12;
+
+            event.setStartTime(new Date(year, month, day, hour, minuteLV.currentIndex), CalendarEvent.SpecLocalZone)
+            event.setEndTime(new Date(year, month, day, (hour+1)%24, minuteLV.currentIndex), CalendarEvent.SpecLocalZone)
             event.allDay = false
 
             event.calendarUid = Calendar.defaultNotebook
@@ -137,11 +170,23 @@ Item {
 
     Component.onCompleted: {
         if (typeof event === 'undefined') {
-            hourLV.currentIndex = wallClock.time.getHours();
+            var hour = wallClock.time.getHours();
+            if(use12H.value) {
+                amPmLV.currentIndex = hour / 12;
+                hour = hour % 12;
+            }
+
+            hourLV.currentIndex = hour;
             minuteLV.currentIndex = wallClock.time.getMinutes();
         }
         else {
-            hourLV.currentIndex   = event.startTime.getHours();
+            var hour = event.startTime.getHours();
+            if(use12H.value) {
+                amPmLV.currentIndex = hour / 12;
+                hour = hour % 12;
+            }
+
+            hourLV.currentIndex   = hour;
             minuteLV.currentIndex = event.startTime.getMinutes();
             titleField.text = event.displayLabel
         }
