@@ -133,8 +133,6 @@ Application {
                 enabled: opacity == 1.0
                 opacity: isDayView ? 1.0 : 0.0
                 Behavior on opacity { NumberAnimation { duration: 200 } }
-                iconColor: "white"
-                pressedIconColor: "lightgrey"
                 iconName:  "ios-add-circle-outline"
                 onClicked: layerStack.push(eventDialogLayer)
             }

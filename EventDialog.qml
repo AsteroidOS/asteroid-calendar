@@ -110,8 +110,6 @@ Item {
 
     IconButton {
         iconName: "ios-trash-circle"
-        iconColor: "white"
-        pressedIconColor: "lightgrey"
         visible: typeof event !== 'undefined'
         anchors.right: parent.horizontalCenter
         anchors.rightMargin: Dims.w(2)
@@ -131,8 +129,6 @@ Item {
         anchors.bottomMargin: Dims.iconButtonMargin
 
         iconName: typeof event !== 'undefined' ? "ios-checkmark-circle-outline" : "ios-add-circle-outline"
-        iconColor: "white"
-        pressedIconColor: "lightgrey"
 
         onClicked: {
             if(typeof event !== 'undefined')
