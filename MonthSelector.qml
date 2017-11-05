@@ -87,12 +87,7 @@ Item {
     }
 
     IconButton {
-        anchors.horizontalCenter: parent.horizontalCenter
-        anchors.bottom: parent.bottom
-        anchors.bottomMargin: Dims.iconButtonMargin
-
         iconName: "ios-checkmark-circle-outline"
-
         onClicked: {
             month = monthLV.currentIndex+1
             year = yearLV.currentIndex+2000
@@ -100,5 +95,4 @@ Item {
             root.pop();
         }
     }
-
 }

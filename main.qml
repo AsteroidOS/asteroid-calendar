@@ -127,11 +127,8 @@ Application {
 
             IconButton {
                 id: add
-                anchors.bottom: parent.bottom
-                anchors.bottomMargin: Dims.iconButtonMargin
-                anchors.horizontalCenter: parent.horizontalCenter
                 enabled: opacity == 1.0
-                opacity: isDayView ? 1.0 : 0.0
+                opacity: !isDayView ? 0.0 : 1.0
                 Behavior on opacity { NumberAnimation { duration: 200 } }
                 iconName:  "ios-add-circle-outline"
                 onClicked: layerStack.push(eventDialogLayer)

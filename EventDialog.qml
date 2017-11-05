@@ -111,6 +111,7 @@ Item {
     IconButton {
         iconName: "ios-trash-circle"
         visible: typeof event !== 'undefined'
+        edge: undefinedEdge
         anchors.right: parent.horizontalCenter
         anchors.rightMargin: Dims.w(2)
         anchors.bottom: parent.bottom
@@ -122,14 +123,13 @@ Item {
     }
 
     IconButton {
+        iconName: typeof event !== 'undefined' ? "ios-checkmark-circle-outline" : "ios-add-circle-outline"
+        edge: undefinedEdge
         anchors.left: typeof event !== 'undefined' ? parent.horizontalCenter : undefined
         anchors.leftMargin: Dims.w(2)
         anchors.horizontalCenter: typeof event !== 'undefined' ? undefined : parent.horizontalCenter
         anchors.bottom: parent.bottom
         anchors.bottomMargin: Dims.iconButtonMargin
-
-        iconName: typeof event !== 'undefined' ? "ios-checkmark-circle-outline" : "ios-add-circle-outline"
-
         onClicked: {
             if(typeof event !== 'undefined')
                 Calendar.removeAll(event.uniqueId)
