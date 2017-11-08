@@ -37,9 +37,8 @@ Item {
         defaultValue: false
     }
 
-    Text {
+    Label {
         id: title
-        color: "white"
         text: typeof event === 'undefined' ? qsTr("New Event").toUpperCase() : qsTr("Edit Event").toUpperCase()
         height: Dims.h(15)
         anchors.top: parent.top

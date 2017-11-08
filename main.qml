@@ -98,19 +98,17 @@ Application {
                     width: parent.width
                     Behavior on height { NumberAnimation { duration: 100 } }
 
-                    Text {
+                    Label {
                         id: hour
                         text: Qt.formatTime(model.occurrence.startTime, use12H.value ? "hh:mm AP" : "hh:mm")
-                        color: "white"
                         horizontalAlignment: Text.AlignRight
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.left: parent.left
                         width: parent.width/3
                         font.pixelSize: use12H.value ? parent.height/3.3 : parent.height/2.5
                     }
-                    Text {
+                    Label {
                         id: title
-                        color: "white"
                         anchors.left: hour.right
                         anchors.right: parent.right
                         anchors.leftMargin: 20
@@ -156,9 +154,8 @@ Application {
                     anchors.right: parent.right
                     height: 2*parent.height*dayInfoHeight/daySelectorHeight
 
-                    Text {
+                    Label {
                         anchors.fill: parent
-                        color: "white"
                         text: Qt.locale().monthName(month-1, Locale.LongFormat)
                         horizontalAlignment: Text.AlignHCenter
                         verticalAlignment: Text.AlignVCenter
@@ -192,10 +189,9 @@ Application {
                             source: "qrc:/day_background.png"
                         }
 
-                        Text {
+                        Label {
                             text: Qt.locale().dayName(new Date(year, month-1, index+1).getDay(), Locale.ShortFormat) +
                                   "\n" + (index+1)
-                            color: "white"
                             anchors.centerIn: parent
                             horizontalAlignment: Text.AlignHCenter
                             verticalAlignment: Text.AlignVCenter
@@ -236,9 +232,8 @@ Application {
                 Component.onCompleted: if(!DeviceInfo.hasRoundScreen) anchors.topMargin=0
                 height: dayInfoHeight
                 color: overlayColor
-                Text {
+                Label {
                     anchors.fill: parent
-                    color: "white"
                     text: qsTr("%1 Events on %2 %3/%4/%5").arg(agenda.count).arg(Qt.locale().dayName(new Date(year, month-1, day).getDay(), Locale.ShortFormat)).arg(zeroPadding(day)).arg(month).arg(zeroPadding(year-2000))
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter

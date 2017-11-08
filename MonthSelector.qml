@@ -22,9 +22,8 @@ Item {
     id: root
     property var pop
 
-    Text {
+    Label {
         id: title
-        color: "white"
         text: qsTr("Select a date:")
         height: Dims.h(20)
         anchors.top: parent.top
