@@ -41,6 +41,7 @@ Item {
         id: title
         text: typeof event === 'undefined' ? qsTr("New Event").toUpperCase() : qsTr("Edit Event").toUpperCase()
         height: Dims.h(15)
+        font.pixelSize: Dims.l(6)
         anchors.top: parent.top
         anchors.left: parent.left
         anchors.right: parent.right
