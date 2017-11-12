@@ -54,8 +54,7 @@ Item {
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.top: title.bottom
-        anchors.topMargin: Dims.h(5)
-        height: Dims.h(28)
+        height: Dims.h(43)
 
         property int spinnerWidth: use12H.value ? width/3 : width/2
 
@@ -88,7 +87,6 @@ Item {
         id: titleField
         width: Dims.w(80)
         anchors.top: timeSelector.bottom
-        anchors.topMargin: Dims.h(10)
         anchors.horizontalCenter: parent.horizontalCenter
         previewText: qsTr("Title")
     }
