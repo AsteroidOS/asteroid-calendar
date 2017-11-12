@@ -22,11 +22,11 @@ Item {
     id: root
     property var pop
 
-    Text {
+    Label {
         id: title
-        color: "white"
         text: qsTr("Select a date:")
         height: Dims.h(20)
+        font.pixelSize: Dims.l(6)
         anchors.top: parent.top
         anchors.left: parent.left
         anchors.right: parent.right
@@ -47,18 +47,7 @@ Item {
             width: parent.width/2
             model: 12
             showSeparator: true
-            delegate: Item {
-                width: monthLV.width
-                height: Dims.h(10)
-                Text {
-                    text: Qt.locale().monthName(index, Locale.ShortFormat)
-                    anchors.centerIn: parent
-                    color: parent.PathView.isCurrentItem ? "#FFFFFF" : "#88FFFFFF"
-                    scale: parent.PathView.isCurrentItem ? 1.7 : 1
-                    Behavior on scale { NumberAnimation { duration: 200 } }
-                    Behavior on color { ColorAnimation { duration: 200 } }
-                }
-            }
+            delegate: SpinnerDelegate { text: Qt.locale().monthName(index, Locale.ShortFormat) }
         }
 
         CircularSpinner {
@@ -66,18 +55,7 @@ Item {
             height: parent.height
             width: parent.width/2
             model: 100
-            delegate: Item {
-                width: yearLV.width
-                height: Dims.h(10)
-                Text {
-                    text: index+2000
-                    anchors.centerIn: parent
-                    color: parent.PathView.isCurrentItem ? "#FFFFFF" : "#88FFFFFF"
-                    scale: parent.PathView.isCurrentItem ? 1.5 : 1
-                    Behavior on scale { NumberAnimation { duration: 200 } }
-                    Behavior on color { ColorAnimation { duration: 200 } }
-                }
-            }
+            delegate: SpinnerDelegate { text: index+2000 }
         }
    }
 
