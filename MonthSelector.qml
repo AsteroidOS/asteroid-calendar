@@ -50,7 +50,7 @@ Item {
             delegate: SpinnerDelegate { text: Qt.locale().monthName(index, Locale.ShortFormat) }
         }
 
-        CircularSpinner {
+        Spinner {
             id: yearLV
             height: parent.height
             width: parent.width/2
