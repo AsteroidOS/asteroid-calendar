@@ -2,30 +2,64 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="sv">
 <context>
+    <name></name>
+    <message id="id-new-event">
+        <location filename="../EventDialog.qml" line="43"/>
+        <source>New Event</source>
+        <translation type="unfinished">Ny händelse</translation>
+    </message>
+    <message id="id-edit-event">
+        <location filename="../EventDialog.qml" line="45"/>
+        <source>Edit Event</source>
+        <translation type="unfinished">Redigera händelse</translation>
+    </message>
+    <message id="id-title-field">
+        <location filename="../EventDialog.qml" line="97"/>
+        <source>Title</source>
+        <translation type="unfinished">Titel</translation>
+    </message>
+    <message id="id-untitled-event">
+        <location filename="../EventDialog.qml" line="135"/>
+        <source>Untitled event</source>
+        <translation type="unfinished">Namnlös händelse</translation>
+    </message>
+    <message id="id-date-selection">
+        <location filename="../MonthSelector.qml" line="28"/>
+        <source>Select a date:</source>
+        <translation type="unfinished">Välj ett datum:</translation>
+    </message>
+    <message id="id-events-recap">
+        <location filename="../main.qml" line="238"/>
+        <source>%1 Events on %2 %3/%4/%5</source>
+        <translation type="unfinished">%1 händelser vid %2 %3/%4/%5</translation>
+    </message>
+    <message id="id-app-launcher-name">
+        <location filename="asteroid-calendar.desktop.h" line="6"/>
+        <source>Agenda</source>
+        <translation type="unfinished">Kalender</translation>
+    </message>
+</context>
+<context>
     <name>EventDialog</name>
     <message>
-        <location filename="../EventDialog.qml" line="36"/>
         <source>New Event</source>
-        <translation>Ny händelse</translation>
+        <translation type="vanished">Ny händelse</translation>
     </message>
     <message>
-        <location filename="../EventDialog.qml" line="36"/>
         <source>Edit Event</source>
-        <translation>Redigera händelse</translation>
+        <translation type="vanished">Redigera händelse</translation>
     </message>
     <message>
-        <location filename="../EventDialog.qml" line="115"/>
         <source>Title</source>
-        <translation>Titel</translation>
+        <translation type="vanished">Titel</translation>
     </message>
     <message>
-        <location filename="../EventDialog.qml" line="157"/>
         <source>Untitled event</source>
-        <translation>Namnlös händelse</translation>
+        <translation type="vanished">Namnlös händelse</translation>
     </message>
     <message>
         <source>Alpha version</source>
-        <translation>Alpha-version</translation>
+        <translation type="vanished">Alpha-version</translation>
     </message>
     <message>
         <source>Some features are not developed yet</source>
@@ -35,25 +69,22 @@
 <context>
     <name>MonthSelector</name>
     <message>
-        <location filename="../MonthSelector.qml" line="28"/>
         <source>Select a date:</source>
-        <translation>Välj ett datum:</translation>
+        <translation type="vanished">Välj ett datum:</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="asteroid-calendar.desktop.h" line="5"/>
         <source>Agenda</source>
-        <translation>Kalender</translation>
+        <translation type="vanished">Kalender</translation>
     </message>
 </context>
 <context>
     <name>main</name>
     <message>
-        <location filename="../main.qml" line="239"/>
         <source>%1 Events on %2 %3/%4/%5</source>
-        <translation>%1 händelser vid %2 %3/%4/%5</translation>
+        <translation type="vanished">%1 händelser vid %2 %3/%4/%5</translation>
     </message>
 </context>
 </TS>

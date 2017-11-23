@@ -2,26 +2,52 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="fa">
 <context>
-    <name>EventDialog</name>
-    <message>
-        <location filename="../EventDialog.qml" line="36"/>
+    <name></name>
+    <message id="id-new-event">
+        <location filename="../EventDialog.qml" line="43"/>
         <source>New Event</source>
-        <translation>رویداد جدید</translation>
+        <translation type="unfinished">رویداد جدید</translation>
     </message>
-    <message>
-        <location filename="../EventDialog.qml" line="36"/>
+    <message id="id-edit-event">
+        <location filename="../EventDialog.qml" line="45"/>
         <source>Edit Event</source>
-        <translation>ویرایش رویداد</translation>
+        <translation type="unfinished">ویرایش رویداد</translation>
     </message>
-    <message>
-        <location filename="../EventDialog.qml" line="115"/>
+    <message id="id-title-field">
+        <location filename="../EventDialog.qml" line="97"/>
         <source>Title</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <location filename="../EventDialog.qml" line="157"/>
+    <message id="id-untitled-event">
+        <location filename="../EventDialog.qml" line="135"/>
         <source>Untitled event</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message id="id-date-selection">
+        <location filename="../MonthSelector.qml" line="28"/>
+        <source>Select a date:</source>
+        <translation type="unfinished">گزینش یک تاریخ:</translation>
+    </message>
+    <message id="id-events-recap">
+        <location filename="../main.qml" line="238"/>
+        <source>%1 Events on %2 %3/%4/%5</source>
+        <translation type="unfinished">‫%1 رویداد در  %2 %3/%4/%5</translation>
+    </message>
+    <message id="id-app-launcher-name">
+        <location filename="asteroid-calendar.desktop.h" line="6"/>
+        <source>Agenda</source>
+        <translation type="unfinished">تقویم</translation>
+    </message>
+</context>
+<context>
+    <name>EventDialog</name>
+    <message>
+        <source>New Event</source>
+        <translation type="vanished">رویداد جدید</translation>
+    </message>
+    <message>
+        <source>Edit Event</source>
+        <translation type="vanished">ویرایش رویداد</translation>
     </message>
     <message>
         <source>Alpha version</source>
@@ -35,25 +61,22 @@
 <context>
     <name>MonthSelector</name>
     <message>
-        <location filename="../MonthSelector.qml" line="28"/>
         <source>Select a date:</source>
-        <translation>گزینش یک تاریخ:</translation>
+        <translation type="vanished">گزینش یک تاریخ:</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="asteroid-calendar.desktop.h" line="5"/>
         <source>Agenda</source>
-        <translation>تقویم</translation>
+        <translation type="vanished">تقویم</translation>
     </message>
 </context>
 <context>
     <name>main</name>
     <message>
-        <location filename="../main.qml" line="239"/>
         <source>%1 Events on %2 %3/%4/%5</source>
-        <translation>‫%1 رویداد در  %2 %3/%4/%5</translation>
+        <translation type="vanished">‫%1 رویداد در  %2 %3/%4/%5</translation>
     </message>
 </context>
 </TS>
