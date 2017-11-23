@@ -234,7 +234,8 @@ Application {
                 color: overlayColor
                 Label {
                     anchors.fill: parent
-                    text: qsTr("%1 Events on %2 %3/%4/%5").arg(agenda.count).arg(Qt.locale().dayName(new Date(year, month-1, day).getDay(), Locale.ShortFormat)).arg(zeroPadding(day)).arg(month).arg(zeroPadding(year-2000))
+                    //% "%1 Events on %2 %3/%4/%5"
+                    text: qsTrId("id-events-recap").arg(agenda.count).arg(Qt.locale().dayName(new Date(year, month-1, day).getDay(), Locale.ShortFormat)).arg(zeroPadding(day)).arg(month).arg(zeroPadding(year-2000))
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
                     font.pixelSize: height/2.5

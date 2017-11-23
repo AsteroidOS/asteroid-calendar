@@ -39,7 +39,11 @@ Item {
 
     Label {
         id: title
-        text: typeof event === 'undefined' ? qsTr("New Event").toUpperCase() : qsTr("Edit Event").toUpperCase()
+        //% "New Event"
+        property string newEventText: qsTrId("id-new-event").toUpperCase()
+        //% "Edit Event"
+        property string editEventText: qsTrId("id-edit-event").toUpperCase()
+        text: typeof event === 'undefined' ? newEventText : editEventText
         height: Dims.h(15)
         font.pixelSize: Dims.l(6)
         anchors.top: parent.top
@@ -89,7 +93,8 @@ Item {
         width: Dims.w(80)
         anchors.top: timeSelector.bottom
         anchors.horizontalCenter: parent.horizontalCenter
-        previewText: qsTr("Title")
+        //% "Title"
+        previewText: qsTrId("id-title-field")
     }
 
     HandWritingKeyboard {
@@ -126,8 +131,8 @@ Item {
 
             if(titleField.text.length)
                 event.displayLabel = titleField.text
-            else
-                event.displayLabel = qsTr("Untitled event")
+            else //% "Untitled event"
+                event.displayLabel = qsTrId("id-untitled-event")
             event.location = "Event Location"
             event.description = "Event Description"
 
