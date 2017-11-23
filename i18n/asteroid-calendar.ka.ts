@@ -6,85 +6,37 @@
     <message id="id-new-event">
         <location filename="../EventDialog.qml" line="43"/>
         <source>New Event</source>
-        <translation type="unfinished">ახალი ღონისძიება</translation>
+        <translation>ახალი ღონისძიება</translation>
     </message>
     <message id="id-edit-event">
         <location filename="../EventDialog.qml" line="45"/>
         <source>Edit Event</source>
-        <translation type="unfinished">ღონისძიების რედაქტირება</translation>
+        <translation>ღონისძიების რედაქტირება</translation>
     </message>
     <message id="id-title-field">
         <location filename="../EventDialog.qml" line="97"/>
         <source>Title</source>
-        <translation type="unfinished">სათაური</translation>
+        <translation>სათაური</translation>
     </message>
     <message id="id-untitled-event">
         <location filename="../EventDialog.qml" line="135"/>
         <source>Untitled event</source>
-        <translation type="unfinished">უსათაურო ღონისძიება</translation>
+        <translation>უსათაურო ღონისძიება</translation>
     </message>
     <message id="id-date-selection">
         <location filename="../MonthSelector.qml" line="28"/>
         <source>Select a date:</source>
-        <translation type="unfinished">აირჩიეთ თარიღი:</translation>
+        <translation>აირჩიეთ თარიღი:</translation>
     </message>
     <message id="id-events-recap">
         <location filename="../main.qml" line="238"/>
         <source>%1 Events on %2 %3/%4/%5</source>
-        <translation type="unfinished">%1 ღონისძიებები %2-ს %3/%4/%5</translation>
+        <translation>%1 ღონისძიებები %2-ს %3/%4/%5</translation>
     </message>
     <message id="id-app-launcher-name">
         <location filename="asteroid-calendar.desktop.h" line="6"/>
         <source>Agenda</source>
-        <translation type="unfinished">დღის წესრიგი</translation>
-    </message>
-</context>
-<context>
-    <name>EventDialog</name>
-    <message>
-        <source>New Event</source>
-        <translation type="vanished">ახალი ღონისძიება</translation>
-    </message>
-    <message>
-        <source>Edit Event</source>
-        <translation type="vanished">ღონისძიების რედაქტირება</translation>
-    </message>
-    <message>
-        <source>Title</source>
-        <translation type="vanished">სათაური</translation>
-    </message>
-    <message>
-        <source>Untitled event</source>
-        <translation type="vanished">უსათაურო ღონისძიება</translation>
-    </message>
-    <message>
-        <source>Alpha version</source>
-        <translation type="vanished">ალფა ვერსია</translation>
-    </message>
-    <message>
-        <source>Some features are not developed yet</source>
-        <translation type="vanished">ზოგიერთი ფუნქცია ჯერ კიდევ არ არის განვითარებული</translation>
-    </message>
-</context>
-<context>
-    <name>MonthSelector</name>
-    <message>
-        <source>Select a date:</source>
-        <translation type="vanished">აირჩიეთ თარიღი:</translation>
-    </message>
-</context>
-<context>
-    <name>QObject</name>
-    <message>
-        <source>Agenda</source>
-        <translation type="vanished">დღის წესრიგი</translation>
-    </message>
-</context>
-<context>
-    <name>main</name>
-    <message>
-        <source>%1 Events on %2 %3/%4/%5</source>
-        <translation type="vanished">%1 ღონისძიებები %2-ს %3/%4/%5</translation>
+        <translation>დღის წესრიგი</translation>
     </message>
 </context>
 </TS>
