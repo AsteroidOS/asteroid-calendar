@@ -14,19 +14,14 @@
         <translation>Upravit událost</translation>
     </message>
     <message id="id-title-field">
-        <location filename="../EventDialog.qml" line="97"/>
+        <location filename="../EventDialog.qml" line="90"/>
         <source>Title</source>
         <translation>Název</translation>
     </message>
     <message id="id-untitled-event">
-        <location filename="../EventDialog.qml" line="135"/>
+        <location filename="../EventDialog.qml" line="128"/>
         <source>Untitled event</source>
         <translation>Nepojmenovaná událost</translation>
-    </message>
-    <message id="id-date-selection">
-        <location filename="../MonthSelector.qml" line="28"/>
-        <source>Select a date:</source>
-        <translation>Vyberte datum:</translation>
     </message>
     <message id="id-events-recap">
         <location filename="../main.qml" line="238"/>
@@ -37,6 +32,11 @@
         <location filename="asteroid-calendar.desktop.h" line="6"/>
         <source>Agenda</source>
         <translation>Program</translation>
+    </message>
+    <message id="id-month-page">
+        <location filename="../MonthSelector.qml" line="28"/>
+        <source>Month</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
