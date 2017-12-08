@@ -22,17 +22,10 @@ Item {
     id: root
     property var pop
 
-    Label {
+    PageHeader {
         id: title
-        //% "Select a date:"
-        text: qsTrId("id-date-selection")
-        height: Dims.h(20)
-        font.pixelSize: Dims.l(6)
-        anchors.top: parent.top
-        anchors.left: parent.left
-        anchors.right: parent.right
-        verticalAlignment: Text.AlignVCenter
-        horizontalAlignment: Text.AlignHCenter
+        //% "Month"
+        text: qsTrId("id-month-page")
     }
 
     Row {

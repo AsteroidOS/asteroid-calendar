@@ -37,20 +37,13 @@ Item {
         defaultValue: false
     }
 
-    Label {
+    PageHeader {
         id: title
         //% "New Event"
-        property string newEventText: qsTrId("id-new-event").toUpperCase()
+        property string newEventText: qsTrId("id-new-event")
         //% "Edit Event"
-        property string editEventText: qsTrId("id-edit-event").toUpperCase()
+        property string editEventText: qsTrId("id-edit-event")
         text: typeof event === 'undefined' ? newEventText : editEventText
-        height: Dims.h(15)
-        font.pixelSize: Dims.l(6)
-        anchors.top: parent.top
-        anchors.left: parent.left
-        anchors.right: parent.right
-        verticalAlignment: Text.AlignVCenter
-        horizontalAlignment: Text.AlignHCenter
     }
 
     Row {
@@ -58,7 +51,7 @@ Item {
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.top: title.bottom
-        height: Dims.h(43)
+        height: Dims.h(38)
 
         property int spinnerWidth: use12H.value ? width/3 : width/2
 
