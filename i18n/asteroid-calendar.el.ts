@@ -6,12 +6,12 @@
     <message id="id-new-event">
         <location filename="../EventDialog.qml" line="43"/>
         <source>New Event</source>
-        <translation>Νέα Εκδήλωση</translation>
+        <translation>Νέο Συμβάν</translation>
     </message>
     <message id="id-edit-event">
         <location filename="../EventDialog.qml" line="45"/>
         <source>Edit Event</source>
-        <translation>Επεξεργασία Εκδήλωσης</translation>
+        <translation>Επεξεργασία Συμβάντος</translation>
     </message>
     <message id="id-title-field">
         <location filename="../EventDialog.qml" line="90"/>
@@ -21,17 +21,17 @@
     <message id="id-untitled-event">
         <location filename="../EventDialog.qml" line="128"/>
         <source>Untitled event</source>
-        <translation>Εκδήλωση χωρίς τίτλο</translation>
+        <translation>Συμβάν χωρίς τίτλο</translation>
     </message>
     <message id="id-events-recap">
         <location filename="../main.qml" line="238"/>
         <source>%1 Events on %2 %3/%4/%5</source>
-        <translation>%1 Εκδηλώσεις στις %2 %3/%4/%5</translation>
+        <translation>%1 Συμβάντα στις %2 %3/%4/%5</translation>
     </message>
     <message id="id-app-launcher-name">
         <location filename="asteroid-calendar.desktop.h" line="6"/>
         <source>Agenda</source>
-        <translation>Ατζέντα</translation>
+        <translation>Πρόγραμμα</translation>
     </message>
     <message id="id-month-page">
         <location filename="../MonthSelector.qml" line="28"/>
