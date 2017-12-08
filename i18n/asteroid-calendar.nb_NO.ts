@@ -36,7 +36,7 @@
     <message id="id-month-page">
         <location filename="../MonthSelector.qml" line="28"/>
         <source>Month</source>
-        <translation type="unfinished"></translation>
+        <translation>Måned</translation>
     </message>
 </context>
 </TS>
