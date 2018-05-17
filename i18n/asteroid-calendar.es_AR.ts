@@ -6,27 +6,27 @@
     <message id="id-new-event">
         <location filename="../EventDialog.qml" line="43"/>
         <source>New Event</source>
-        <translation></translation>
+        <translation>Evento nuevo</translation>
     </message>
     <message id="id-edit-event">
         <location filename="../EventDialog.qml" line="45"/>
         <source>Edit Event</source>
-        <translation></translation>
+        <translation>Editar evento</translation>
     </message>
     <message id="id-title-field">
         <location filename="../EventDialog.qml" line="90"/>
         <source>Title</source>
-        <translation></translation>
+        <translation>Título</translation>
     </message>
     <message id="id-untitled-event">
         <location filename="../EventDialog.qml" line="128"/>
         <source>Untitled event</source>
-        <translation></translation>
+        <translation>Evento sin título</translation>
     </message>
     <message id="id-events-recap">
         <location filename="../main.qml" line="238"/>
         <source>%1 Events on %2 %3/%4/%5</source>
-        <translation></translation>
+        <translation>%1 evento(s) el %2 %3/%4/%5</translation>
     </message>
     <message id="id-app-launcher-name">
         <location filename="asteroid-calendar.desktop.h" line="6"/>
@@ -36,7 +36,7 @@
     <message id="id-month-page">
         <location filename="../MonthSelector.qml" line="28"/>
         <source>Month</source>
-        <translation></translation>
+        <translation>Mes</translation>
     </message>
 </context>
 </TS>
