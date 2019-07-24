@@ -26,12 +26,12 @@
     <message id="id-events-recap">
         <location filename="../main.qml" line="238"/>
         <source>%1 Events on %2 %3/%4/%5</source>
-        <translation>‫%1 رویداد در  %2 %3/%4/%5</translation>
+        <translation>‫%1 رویداد در %2 %3/%4/%5</translation>
     </message>
     <message id="id-app-launcher-name">
         <location filename="asteroid-calendar.desktop.h" line="6"/>
         <source>Agenda</source>
-        <translation>تقویم</translation>
+        <translation>دستور کار</translation>
     </message>
     <message id="id-month-page">
         <location filename="../MonthSelector.qml" line="28"/>
