@@ -26,7 +26,7 @@
     <message id="id-events-recap">
         <location filename="../main.qml" line="238"/>
         <source>%1 Events on %2 %3/%4/%5</source>
-        <translation>%1 مناسبة في %2 %3/%4/%5</translation>
+        <translation>‌‍‍</translation>
     </message>
     <message id="id-app-launcher-name">
         <location filename="asteroid-calendar.desktop.h" line="6"/>
