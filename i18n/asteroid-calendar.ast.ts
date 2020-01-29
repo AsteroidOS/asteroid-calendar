@@ -11,7 +11,7 @@
     <message id="id-edit-event">
         <location filename="../EventDialog.qml" line="45"/>
         <source>Edit Event</source>
-        <translation type="unfinished"></translation>
+        <translation>Ereignis bearbeiten</translation>
     </message>
     <message id="id-title-field">
         <location filename="../EventDialog.qml" line="90"/>
