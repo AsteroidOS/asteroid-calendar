@@ -3,5 +3,5 @@ Type=Application
 Categories=Applications;
 Exec=invoker --single-instance --type=qtcomponents-qt5 /usr/bin/asteroid-calendar
 Icon=ios-calendar-outline
-X-Asteroid-Center-Color=#EA9C14
-X-Asteroid-Outer-Color=#5E3F08
+X-Asteroid-Center-Color=#CC7700
+X-Asteroid-Outer-Color=#0C0300
