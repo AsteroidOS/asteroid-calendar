@@ -24,8 +24,8 @@ import org.asteroid.utils 1.0
 Application {
     id: app
 
-    centerColor: "#EA9C14"
-    outerColor: "#5E3F08"
+    centerColor: "#CC7700"
+    outerColor: "#0C0300"
     property color overlayColor: "#b07414"
 
     property date currentDate: new Date()
