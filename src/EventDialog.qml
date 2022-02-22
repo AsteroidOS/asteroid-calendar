@@ -20,6 +20,7 @@ import Nemo.Time 1.0
 import Nemo.Configuration 1.0
 import org.nemomobile.calendar 1.0
 import org.asteroid.controls 1.0
+import org.asteroid.utils 1.0
 
 Item {
     id: root
@@ -33,12 +34,14 @@ Item {
 
     ConfigurationValue {
         id: use12H
+
         key: "/org/asteroidos/settings/use-12h-format"
         defaultValue: false
     }
 
     PageHeader {
         id: title
+
         //% "New Event"
         property string newEventText: qsTrId("id-new-event")
         //% "Edit Event"
@@ -48,24 +51,32 @@ Item {
 
     Row {
         id: timeSelector
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.top: title.bottom
-        height: Dims.h(38)
 
-        property int spinnerWidth: use12H.value ? width/3 : width/2
+        anchors {
+            left: parent.left
+            leftMargin: DeviceInfo.hasRoundScreen ? Dims.w(10) : 0
+            right: parent.right
+            rightMargin: DeviceInfo.hasRoundScreen ? Dims.w(10) : 0
+            top: title.bottom
+        }
+        height: Dims.h(38)
+        width: DeviceInfo.hasRoundScreen ? Dims.w(80) : Dims.w(100)
+
+        property int spinnerWidth: use12H.value ? timeSelector.width / 3 : timeSelector.width / 2
 
         CircularSpinner {
             id: hourLV
+
             height: parent.height
             width: parent.spinnerWidth
             model: use12H.value ? 12 : 24
             showSeparator: true
-            delegate: SpinnerDelegate { text: (index == 0 && use12H.value) ? "12" : ("0" + index).slice(-2) }
+            delegate: SpinnerDelegate { text: (index === 0 && use12H.value) ? "12" : ("0" + index).slice(-2) }
         }
 
         CircularSpinner {
             id: minuteLV
+
             height: parent.height
             width: parent.spinnerWidth
             model: 60
@@ -74,15 +85,17 @@ Item {
 
         Spinner {
             id: amPmLV
+
             height: parent.height
             width: parent.spinnerWidth
             model: 2
-            delegate: SpinnerDelegate { text: index == 0 ? "AM" : "PM" }
+            delegate: SpinnerDelegate { text: index === 0 ? "AM" : "PM" }
         }
     }
 
     TextField {
         id: titleField
+
         width: Dims.w(80)
         anchors.top: timeSelector.bottom
         anchors.horizontalCenter: parent.horizontalCenter
@@ -135,7 +148,7 @@ Item {
 
             var hour = hourLV.currentIndex;
             if(use12H.value)
-                hour += amPmLV.currentIndex*12;
+                hour += amPmLV.currentIndex * 12;
 
             event.setStartTime(new Date(year, month, day, hour, minuteLV.currentIndex), CalendarEvent.SpecLocalZone)
             event.setEndTime(new Date(year, month, day, (hour+1)%24, minuteLV.currentIndex), CalendarEvent.SpecLocalZone)
