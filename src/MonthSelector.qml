@@ -17,6 +17,7 @@
 
 import QtQuick 2.9
 import org.asteroid.controls 1.0
+import org.asteroid.utils 1.0
 
 Item {
     id: root
@@ -24,21 +25,28 @@ Item {
 
     PageHeader {
         id: title
+
         //% "Month"
         text: qsTrId("id-month-page")
     }
 
     Row {
         id: dateSelector
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.top: title.bottom
+
+        anchors {
+            left: parent.left
+            leftMargin: DeviceInfo.hasRoundScreen ? Dims.w(10) : 0
+            right: parent.right
+            rightMargin: DeviceInfo.hasRoundScreen ? Dims.w(10) : 0
+            top: title.bottom
+        }
         height: Dims.h(60)
 
         CircularSpinner {
             id: monthLV
+
             height: parent.height
-            width: parent.width/2
+            width: parent.width / 2
             model: 12
             showSeparator: true
             delegate: SpinnerDelegate { text: Qt.locale().monthName(index, Locale.ShortFormat) }
@@ -46,23 +54,24 @@ Item {
 
         Spinner {
             id: yearLV
+
             height: parent.height
-            width: parent.width/2
+            width: parent.width / 2
             model: 100
-            delegate: SpinnerDelegate { text: index+2000 }
+            delegate: SpinnerDelegate { text: index + 2000 }
         }
    }
 
     Component.onCompleted: {
-        monthLV.currentIndex = month-1;
-        yearLV.currentIndex = year-2000;
+        monthLV.currentIndex = month - 1;
+        yearLV.currentIndex = year - 2000;
     }
 
     IconButton {
         iconName: "ios-checkmark-circle-outline"
         onClicked: {
-            month = monthLV.currentIndex+1
-            year = yearLV.currentIndex+2000
+            month = monthLV.currentIndex + 1
+            year = yearLV.currentIndex + 2000
 
             root.pop();
         }
