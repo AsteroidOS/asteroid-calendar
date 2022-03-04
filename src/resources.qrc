@@ -3,6 +3,8 @@
         <file>main.qml</file>
         <file>EventDialog.qml</file>
         <file>MonthSelector.qml</file>
-        <file>day_background.png</file>
+        <file>day-background.svg</file>
+        <file>day-background-leftstop.svg</file>
+        <file>day-background-rightstop.svg</file>
     </qresource>
 </RCC>
