@@ -63,14 +63,14 @@ Item {
    }
 
     Component.onCompleted: {
-        monthLV.currentIndex = month - 1;
+        monthLV.currentIndex = month;
         yearLV.currentIndex = year - 2000;
     }
 
     IconButton {
         iconName: "ios-checkmark-circle-outline"
         onClicked: {
-            month = monthLV.currentIndex + 1
+            month = monthLV.currentIndex
             year = yearLV.currentIndex + 2000
 
             root.pop();
