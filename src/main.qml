@@ -35,7 +35,7 @@ Application {
     property date currentDate: new Date()
 
     property int year: currentDate.getFullYear()
-    property int month: currentDate.getMonth()+1
+    property int month: currentDate.getMonth()
     property int day: currentDate.getDate()
 
     function zeroPadding(i) {
@@ -292,7 +292,7 @@ Application {
                     Label {
                         id: monthDisplay
 
-                        text: Qt.locale().monthName(month-1, Locale.LongFormat)
+                        text: Qt.locale().monthName(month, Locale.LongFormat)
                         anchors {
                             fill: parent
                             topMargin: Dims.h(7)
@@ -322,7 +322,7 @@ Application {
                         bottom: parent.bottom
                     }
                     width: Dims.w(84)
-                    model: new Date(year, month, 0).getDate();
+                    model: new Date(year, month+1, 0).getDate();
                     orientation: ListView.Horizontal
 
                     delegate: Item {
@@ -436,7 +436,7 @@ Application {
                             }
 
                             Label {
-                                text: Qt.locale().dayName(new Date(year, month - 1, index + 1).getDay(), Locale.LongFormat)
+                                text: Qt.locale().dayName(new Date(year, month, index + 1).getDay(), Locale.LongFormat)
                                 clip: false
                                 anchors {
                                     centerIn: parent
@@ -478,7 +478,7 @@ Application {
             }
 
             Label {
-                text: year + "/" + zeroPadding(month) + "/" + zeroPadding(day)
+                text: year + "/" + zeroPadding(month+1) + "/" + zeroPadding(day)
                 opacity: isDayView ? 1 : 0
                 anchors {
                     bottom: dayInfo.top
@@ -519,7 +519,7 @@ Application {
 
                 Label {
                     //% "%1 Events on %2"
-                    text: qsTrId("id-events-recap").arg(agenda.count).arg(Qt.locale().dayName(new Date(year, month - 1, day).getDay(), Locale.ShortFormat))
+                    text: qsTrId("id-events-recap").arg(agenda.count).arg(Qt.locale().dayName(new Date(year, month, day).getDay(), Locale.ShortFormat))
                     anchors.fill: parent
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
