@@ -60,8 +60,8 @@ Application {
 
     AgendaModel {
         id: agendaModel
-        startDate: new Date(year, month, day)
-        endDate: startDate
+        startDate: new Date(year, month, day, 0, 0, 0)
+        endDate: new Date(year, month, day, 23, 59, 59)
     }
 
     Component {
