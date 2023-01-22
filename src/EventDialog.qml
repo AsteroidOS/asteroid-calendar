@@ -142,7 +142,7 @@ Item {
 
             event.recur = CalendarEvent.RecurOnce
             event.unsetRecurEndDate()
-            event.reminder = CalendarEvent.ReminderNone
+            event.reminder = -1  // any negative number means "no reminder"
 
             var hour = hourLV.currentIndex;
             if(use12H.value)
