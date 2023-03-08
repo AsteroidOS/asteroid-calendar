@@ -6,7 +6,7 @@
     <message id="id-new-event">
         <location filename="../src/EventDialog.qml" line="43"/>
         <source>New Event</source>
-        <translation>ਨਵਾਂ ਇਵੈਂਟ</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message id="id-edit-event">
         <location filename="../src/EventDialog.qml" line="45"/>
