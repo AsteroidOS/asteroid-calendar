@@ -20,6 +20,13 @@ ecm_find_qmlmodule(org.nemomobile.calendar 1.0)
 
 add_subdirectory(src)
 
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/asteroid-calendar.in
+	${CMAKE_BINARY_DIR}/asteroid-calendar
+	@ONLY)
+
+install(PROGRAMS ${CMAKE_BINARY_DIR}/asteroid-calendar
+	DESTINATION ${CMAKE_INSTALL_BINDIR})
+
 build_translations(i18n)
 generate_desktop(${CMAKE_SOURCE_DIR} asteroid-calendar)
 
