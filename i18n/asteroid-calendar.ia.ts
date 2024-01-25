@@ -16,7 +16,7 @@
     <message id="id-title-field">
         <location filename="../src/EventDialog.qml" line="90"/>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Titulo</translation>
     </message>
     <message id="id-untitled-event">
         <location filename="../src/EventDialog.qml" line="128"/>
