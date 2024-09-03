@@ -31,7 +31,7 @@
     <message id="id-app-launcher-name">
         <location filename="asteroid-calendar.desktop.h" line="6"/>
         <source>Agenda</source>
-        <translation type="unfinished"></translation>
+        <translation>Agenda</translation>
     </message>
     <message id="id-month-page">
         <location filename="../src/MonthSelector.qml" line="28"/>
