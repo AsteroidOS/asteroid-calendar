@@ -21,7 +21,7 @@
     <message id="id-untitled-event">
         <location filename="../src/EventDialog.qml" line="128"/>
         <source>Untitled event</source>
-        <translation>Nimetön tapahtuma</translation>
+        <translation>Nimeämätön tapahtuma</translation>
     </message>
     <message id="id-events-recap">
         <location filename="../src/main.qml" line="238"/>
