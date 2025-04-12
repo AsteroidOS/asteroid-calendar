@@ -75,7 +75,7 @@ Application {
             onDaySelectorHeightChanged: agenda.contentY = -daySelectorHeight
 
             function animateToDayView() {
-                yAnimation.to = DeviceInfo.hasRoundScreen ? -dayInfoHeight : 0
+                yAnimation.to = DeviceSpecs.hasRoundScreen ? -dayInfoHeight : 0
                 yAnimation.start()
             }
 
@@ -109,7 +109,7 @@ Application {
                 delegate: MouseArea {
                     height: agenda.contentY > -daySelectorHeight / 2 ?
                                 dayInfoHeight * 1.186 :
-                                DeviceInfo.hasRoundScreen ?
+                                DeviceSpecs.hasRoundScreen ?
                                     dayInfoHeight * .94 :
                                     dayInfoHeight
                     width: parent.width
@@ -216,7 +216,7 @@ Application {
                 }
 
                 header: Item { height: daySelectorHeight }
-                footer: Item { height: Math.max(2 * dayInfoHeight, agenda.height - agenda.count * dayInfoHeight * 1.186) - (DeviceInfo.hasRoundScreen ? dayInfoHeight / 2 : 0) }
+                footer: Item { height: Math.max(2 * dayInfoHeight, agenda.height - agenda.count * dayInfoHeight * 1.186) - (DeviceSpecs.hasRoundScreen ? dayInfoHeight / 2 : 0) }
             }
 
             Rectangle {
@@ -513,7 +513,7 @@ Application {
                         else return dayInfoHeight - daySelector.height
                     }
                 }
-                Component.onCompleted: if(!DeviceInfo.hasRoundScreen) anchors.topMargin = 0
+                Component.onCompleted: if(!DeviceSpecs.hasRoundScreen) anchors.topMargin = 0
                 height: dayInfoHeight
                 color: overlayColor
 

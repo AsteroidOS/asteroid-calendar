@@ -35,9 +35,9 @@ Item {
 
         anchors {
             left: parent.left
-            leftMargin: DeviceInfo.hasRoundScreen ? Dims.w(10) : 0
+            leftMargin: DeviceSpecs.hasRoundScreen ? Dims.w(10) : 0
             right: parent.right
-            rightMargin: DeviceInfo.hasRoundScreen ? Dims.w(10) : 0
+            rightMargin: DeviceSpecs.hasRoundScreen ? Dims.w(10) : 0
             top: title.bottom
         }
         height: Dims.h(60)
