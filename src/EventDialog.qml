@@ -54,13 +54,13 @@ Item {
 
         anchors {
             left: parent.left
-            leftMargin: DeviceInfo.hasRoundScreen ? Dims.w(10) : 0
+            leftMargin: DeviceSpecs.hasRoundScreen ? Dims.w(10) : 0
             right: parent.right
-            rightMargin: DeviceInfo.hasRoundScreen ? Dims.w(10) : 0
+            rightMargin: DeviceSpecs.hasRoundScreen ? Dims.w(10) : 0
             top: title.bottom
         }
         height: Dims.h(38)
-        width: DeviceInfo.hasRoundScreen ? Dims.w(80) : Dims.w(100)
+        width: DeviceSpecs.hasRoundScreen ? Dims.w(80) : Dims.w(100)
 
         property int spinnerWidth: use12H.value ? timeSelector.width / 3 : timeSelector.width / 2
 
