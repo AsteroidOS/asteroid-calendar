@@ -31,12 +31,12 @@
     <message id="id-app-launcher-name">
         <location filename="asteroid-calendar.desktop.h" line="6"/>
         <source>Agenda</source>
-        <translation type="unfinished"></translation>
+        <translation>دستۊر کار</translation>
     </message>
     <message id="id-month-page">
         <location filename="../src/MonthSelector.qml" line="28"/>
         <source>Month</source>
-        <translation type="unfinished"></translation>
+        <translation>ما</translation>
     </message>
 </context>
 </TS>
