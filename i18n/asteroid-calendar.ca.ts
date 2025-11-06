@@ -6,12 +6,12 @@
     <message id="id-new-event">
         <location filename="../src/EventDialog.qml" line="43"/>
         <source>New Event</source>
-        <translation>Nou esdeveniment</translation>
+        <translation>Esdeveniment nou</translation>
     </message>
     <message id="id-edit-event">
         <location filename="../src/EventDialog.qml" line="45"/>
         <source>Edit Event</source>
-        <translation>Editar l&apos;esdeveniment</translation>
+        <translation>Edita l&apos;esdeveniment</translation>
     </message>
     <message id="id-title-field">
         <location filename="../src/EventDialog.qml" line="90"/>
