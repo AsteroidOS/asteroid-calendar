@@ -6,22 +6,22 @@
     <message id="id-new-event">
         <location filename="../src/EventDialog.qml" line="43"/>
         <source>New Event</source>
-        <translation type="unfinished"></translation>
+        <translation>Eveniment novèl</translation>
     </message>
     <message id="id-edit-event">
         <location filename="../src/EventDialog.qml" line="45"/>
         <source>Edit Event</source>
-        <translation type="unfinished"></translation>
+        <translation>Modificar l&apos;eveniment</translation>
     </message>
     <message id="id-title-field">
         <location filename="../src/EventDialog.qml" line="90"/>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Títol</translation>
     </message>
     <message id="id-untitled-event">
         <location filename="../src/EventDialog.qml" line="128"/>
         <source>Untitled event</source>
-        <translation type="unfinished"></translation>
+        <translation>Eveniment sens títol</translation>
     </message>
     <message id="id-events-recap">
         <location filename="../src/main.qml" line="238"/>
@@ -36,7 +36,7 @@
     <message id="id-month-page">
         <location filename="../src/MonthSelector.qml" line="28"/>
         <source>Month</source>
-        <translation type="unfinished"></translation>
+        <translation>Mes</translation>
     </message>
 </context>
 </TS>
