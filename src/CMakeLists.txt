@@ -4,7 +4,7 @@ set_target_properties(asteroid-calendar PROPERTIES PREFIX "")
 target_link_libraries(
 	asteroid-calendar
 	PUBLIC
-		Asteroid::AsteroidApp
+		Asteroid::AsteroidApp6
 )
 
 install(
