@@ -1,8 +1,10 @@
 cmake_minimum_required(VERSION 3.6.0)
 
-project(asteroid-calendar
-	VERSION 0.0.1
-	DESCRIPTION "Default calendar app for AsteroidOS")
+project(
+	asteroid-calendar
+	VERSION 2.0
+	DESCRIPTION "Default calendar app for AsteroidOS"
+)
 
 find_package(ECM REQUIRED NO_MODULE)
 find_package(AsteroidApp REQUIRED)
