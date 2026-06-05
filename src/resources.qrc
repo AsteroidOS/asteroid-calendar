@@ -1,8 +1,5 @@
 <RCC>
-    <qresource prefix="/">
-        <file>main.qml</file>
-        <file>EventDialog.qml</file>
-        <file>MonthSelector.qml</file>
+    <qresource prefix="/Calendar/">
         <file>day-background.svg</file>
         <file>day-background-leftstop.svg</file>
         <file>day-background-rightstop.svg</file>
