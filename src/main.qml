@@ -17,7 +17,7 @@
  */
 
 import QtQuick
-import Qt5Compat.GraphicalEffects
+import QtQuick.Effects
 import org.nemomobile.calendar
 import Nemo.Configuration
 import org.asteroid.controls
@@ -116,28 +116,28 @@ Application {
 
                     Behavior on height { NumberAnimation { duration: 200 } }
 
-                    DropShadow {
+                    MultiEffect {
                         anchors.fill: hour
-                        transparentBorder: true
-                        horizontalOffset: 1
-                        verticalOffset: 1
-                        radius: 1
-                        samples: 3
-                        spread: .2
                         source: hour
-                        color: overlayColor
+                        autoPaddingEnabled: true
+                        shadowEnabled: true
+                        shadowColor: overlayColor
+                        shadowHorizontalOffset: 1
+                        shadowVerticalOffset: 1
+                        shadowBlur: .3
+                        blurMax: 8
                     }
 
-                    DropShadow {
+                    MultiEffect {
                         anchors.fill: title
-                        transparentBorder: true
-                        horizontalOffset: 1
-                        verticalOffset: 1
-                        radius: 1
-                        samples: 3
-                        spread: .2
                         source: title
-                        color: overlayColor
+                        autoPaddingEnabled: true
+                        shadowEnabled: true
+                        shadowColor: overlayColor
+                        shadowHorizontalOffset: 1
+                        shadowVerticalOffset: 1
+                        shadowBlur: .3
+                        blurMax: 8
                     }
 
                     Label {
@@ -200,16 +200,15 @@ Application {
                         height: parent.height * .04
                         width: parent.width
 
-                        LinearGradient {
-                                anchors.fill: parent
-                                start: Qt.point(300, 0)
-                                end: Qt.point(0, 0)
-                                gradient: Gradient {
-                                    GradientStop { position: .1; color: "#00000000" }
-                                    GradientStop { position: .5; color: "#44000000" }
-                                    GradientStop { position: .9; color: "#00000000" }
-                                }
+                        Rectangle {
+                            anchors.fill: parent
+                            gradient: Gradient {
+                                orientation: Gradient.Horizontal
+                                GradientStop { position: .1; color: "#00000000" }
+                                GradientStop { position: .5; color: "#44000000" }
+                                GradientStop { position: .9; color: "#00000000" }
                             }
+                        }
                     }
 
                     onClicked: layerStack.push(eventDialogLayer, {"event": model.event})
@@ -343,18 +342,18 @@ Application {
                             Behavior on opacity { NumberAnimation { duration: 150 } }
                         }
 
-                        DropShadow {
+                        MultiEffect {
                             anchors.fill: countBubble
                             visible: listRow.ListView.isCurrentItem && agenda.count > 0
                             opacity: listRow.ListView.isCurrentItem && agenda.count > 0 ? 1 : 0
-                            transparentBorder: true
-                            horizontalOffset: 1.4
-                            verticalOffset: 1.4
-                            radius: 1
-                            samples: 3
-                            spread: .2
                             source: countBubble
-                            color: overlayColor
+                            autoPaddingEnabled: true
+                            shadowEnabled: true
+                            shadowColor: overlayColor
+                            shadowHorizontalOffset: 1.4
+                            shadowVerticalOffset: 1.4
+                            shadowBlur: .3
+                            blurMax: 8
                         }
 
                         Rectangle {
@@ -392,16 +391,16 @@ Application {
                             }
                         }
 
-                        DropShadow {
+                        MultiEffect {
                             anchors.fill: rowShadow
-                            transparentBorder: true
-                            horizontalOffset: 1.6
-                            verticalOffset: 1.6
-                            radius: 1
-                            samples: 3
-                            spread: .2
                             source: rowShadow
-                            color: overlayColor
+                            autoPaddingEnabled: true
+                            shadowEnabled: true
+                            shadowColor: overlayColor
+                            shadowHorizontalOffset: 1.6
+                            shadowVerticalOffset: 1.6
+                            shadowBlur: .3
+                            blurMax: 8
                         }
 
                         Item {
