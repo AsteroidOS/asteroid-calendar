@@ -24,6 +24,7 @@ import org.asteroid.utils
 
 Item {
     id: root
+    property int depth
     property var pop
     property var event
 
