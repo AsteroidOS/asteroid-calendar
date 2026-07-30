@@ -16,7 +16,6 @@
  */
 
 import QtQuick
-import Nemo.Time
 import Nemo.Configuration
 import org.nemomobile.calendar
 import org.asteroid.controls
